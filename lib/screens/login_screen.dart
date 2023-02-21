@@ -65,6 +65,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     child: Text('Don\'t have an account'),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(8),
+                    child: Text(
+                      'Sign up.',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
                   )
                 ],
               )

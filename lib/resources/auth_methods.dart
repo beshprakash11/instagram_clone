@@ -16,6 +16,13 @@ class AuthMethods{
     required String bio,
     required Uint8List file
   }) async {
+    String res = "Some error occured";
+    try {
+      
+    } catch (err) {
+      res = err.toString();      
+    }
 
+    return res;
   }
 }

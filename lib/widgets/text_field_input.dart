@@ -19,17 +19,17 @@ class TextFieldInput extends StatelessWidget {
       borderSide: Divider.createBorderSide(context)
     );
     return TextField(
-      controller: ,
+      controller: textEditingController,
       decoration: InputDecoration(
-        hintText: inputBorder,
+        hintText: hintText,
         border: inputBorder,
         focusedBorder: inputBorder,
         enabledBorder: inputBorder,
         filled:true,
         contentPadding: EdgeInsets.all(8)
       ),
-      keyboardType: ,
-      obscureText: ,
+      keyboardType: textInputType,
+      obscureText: isPass,
     );
   }
 }

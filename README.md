@@ -10,6 +10,8 @@
 - Pubspec Assist for pubspec updated
 - Error lens for error traces
 
+# Running for different platform
+- web:- flutter run -d chrome
 
 # Firebase settings up: 6- setting up firebase
 - iOS settings up: 0-7:12 minutes

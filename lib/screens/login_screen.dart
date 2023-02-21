@@ -16,10 +16,15 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               //svg images
-              SvgPicture.asset('assets/ic_instagram.svg', color: primaryColor, height: 64,),
+              SvgPicture.asset(
+                'assets/ic_instagram.svg',
+                 color: primaryColor,
+                  height: 64,
+              ),
+              SizedBox(height: 64,),
+              //text field input for email
               
 
-              //text field input for email
               // text field input for password
               // button login
               // Transitioning to sigining up

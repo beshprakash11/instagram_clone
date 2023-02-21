@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:instagram_clone/utils/colors.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -14,6 +16,9 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               //svg images
+              SvgPicture.asset('assets/ic_instagram.svg', color: primaryColor,),
+              
+
               //text field input for email
               // text field input for password
               // button login

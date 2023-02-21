@@ -8,7 +8,13 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child:Container(
-          padding: EdgeInsets.all(5),
+          padding: EdgeInsets.symmetric(horizontal: 32),
+          width: double.infinity,
+          child: Column(
+            children: [
+
+            ]
+          ),
         )
       ),
     );

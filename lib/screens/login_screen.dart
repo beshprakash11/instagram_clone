@@ -129,7 +129,9 @@ class _LoginScreenState extends State<LoginScreen> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(4))),
             color: blueColor),
-        child: const Text('Log in'),
+        child: _isLoading ? const  Center(
+          child: CircularProgressIndicator(color: primaryColor,),
+        ): const Text('Log in'),
       ),
     );
   }

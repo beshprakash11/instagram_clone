@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Instagram Clone',
-      
+      theme: ThemeData.dark(),
       home: Scaffold(
         body: Text('Instagram Clone'),
       ),

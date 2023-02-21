@@ -50,8 +50,14 @@ class _SignupScreenState extends State<SignupScreen> {
           // Circular widget to accept and show our selected file
           Stack(
             children: [
-              
+              CircleAvatar(
+                radius: 64,
+                backgroundImage: NetworkImage('https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'),
+              )
             ],
+          ),
+          const SizedBox(
+            height: 24,
           ),
           //text field input for username
           TextFieldInput(

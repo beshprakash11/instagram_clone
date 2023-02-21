@@ -15,6 +15,7 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Flexible(child: Container(), flex: 1,),
               //svg images
               SvgPicture.asset(
                 'assets/ic_instagram.svg',

@@ -74,8 +74,10 @@ class AuthMethods{
     try {
       if(email.isNotEmpty || password.isNotEmpty){
         await _auth.signInWithEmailAndPassword(email: email, password: password);
+        res ="success";
       }
     } catch (err) {
+      res = err.toString();
       
     }
 

@@ -64,4 +64,9 @@ class AuthMethods{
 
     return res;
   }
+
+  //login users
+  Future<String> loginUsers(){
+    
+  }
 }

@@ -19,4 +19,4 @@
 - iOS settings up: 0-7:12 minutes
 
 # Photo permision for ios:
-- Firebase signup Auth:- 27:00 
+- Firebase signup Auth:- 27:00 to 30

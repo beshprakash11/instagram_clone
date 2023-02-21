@@ -23,6 +23,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
   //read images
   Uint8List? _image;
+  bool _isLoading = false;
 
   @override
   void dispose() {
@@ -43,16 +44,23 @@ class _SignupScreenState extends State<SignupScreen> {
 
 
   void signUpUser() async{
+    setState(() {
+      _isLoading = true;
+    });
     String res = await AuthMethods().signUpUser(
             email: _emailController.text,
             password: _passwordController.text,
             username: _userController.text,
             bio: _bioController.text, file: _image!
           );
+    
+    setState(() {
+      _isLoading = false;
+    });
     if( res != 'success'){
       showSnackBar(res, context);
     }else{
-      
+
     }
   }
   @override

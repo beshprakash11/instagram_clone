@@ -59,24 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
               _buildLoginBtn(),
               Flexible(child: Container(), flex: 1,),
               // Transitioning to sigining up
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(vertical: 8),
-                    child: Text('Don\'t have an account'),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(8),
-                    child: Text(
-                      'Sign up.',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                  )
-                ],
-              )
+              _buildDontHaveAccount()
             ]
           ),
         )
@@ -84,20 +67,43 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _buildLoginBtn() {
-    return Container(
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              width: double.infinity,
-              alignment: Alignment.center,
-              decoration: const ShapeDecoration(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(4)
-                  )
+  Widget _buildDontHaveAccount() {
+    return Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: Text('Don\'t have an account'),
                 ),
-                color: blueColor
-              ),
-              child: const Text('Log in'),
+                Container(
+                  padding: EdgeInsets.all(8),
+                  child: Text(
+                    'Sign up.',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+                )
+              ],
             );
+  }
+
+  Widget _buildLoginBtn() {
+    return InkWell(
+      child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                width: double.infinity,
+                alignment: Alignment.center,
+                decoration: const ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(4)
+                    )
+                  ),
+                  color: blueColor
+                ),
+                child: const Text('Log in'),
+              ),
+    );
   }
 }

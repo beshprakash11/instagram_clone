@@ -193,7 +193,9 @@ class _SignupScreenState extends State<SignupScreen> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(4))),
             color: blueColor),
-        child: const Text('Sign up'),
+        child: _isLoading ? const Center(
+          child: CircularProgressIndicator(),
+        ) : const Text('Sign up'),
       ),
     );
   }

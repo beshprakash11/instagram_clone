@@ -6,6 +6,7 @@
 - firebase_auth:- https://pub.dev/packages/firebase_auth
 - firebase_storage :- https://pub.dev/packages/firebase_storage
 - flutter_svg:- https://pub.dev/packages/flutter_svg
+- image_picker:- https://pub.dev/packages/image_picker
 
 # Packages uses
 - Pubspec Assist for pubspec updated

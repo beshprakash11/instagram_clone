@@ -6,7 +6,11 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('Login screen'),
+      body: SafeArea(
+        child:Container(
+          padding: EdgeInsets.all(5),
+        )
+      ),
     );
   }
 }

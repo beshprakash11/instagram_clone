@@ -16,7 +16,7 @@ void main() async{
          messagingSenderId: "638657037864", 
          projectId: "instagram-clone-13760",
          storageBucket: "instagram-clone-13760.appspot.com"
-         )
+      )
     );
   }else{
     await Firebase.initializeApp();

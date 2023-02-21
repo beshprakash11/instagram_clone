@@ -34,12 +34,13 @@ class _SignupScreenState extends State<SignupScreen> {
     _userController.dispose();
   }
 
-  void selectImage() async{
+  void selectImage() async {
     Uint8List im = await pickImage(ImageSource.gallery);
     setState(() {
       _image = im;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,16 +65,16 @@ class _SignupScreenState extends State<SignupScreen> {
           // Circular widget to accept and show our selected file
           Stack(
             children: [
-              _image != null ?
-              CircleAvatar(
-                radius: 64,
-                backgroundImage: MemoryImage(_image!),
-              )
-              : const CircleAvatar(
-                radius: 64,
-                backgroundImage: NetworkImage(
-                    'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'),
-              ),
+              _image != null
+                  ? CircleAvatar(
+                      radius: 64,
+                      backgroundImage: MemoryImage(_image!),
+                    )
+                  : const CircleAvatar(
+                      radius: 64,
+                      backgroundImage: NetworkImage(
+                          'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'),
+                    ),
               Positioned(
                   bottom: -10,
                   left: 80,

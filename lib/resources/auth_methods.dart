@@ -78,7 +78,14 @@ class AuthMethods{
       }else{
         res = "Please enter all the fields";
       }
-    } catch (err) {
+    } on FirebaseAuthException catch(err){
+       if(err.code == 'user-not-found'){
+        res = 'The given user email is not found.';
+      }else if(err.code == 'wrong-password'){
+        res = 'Password you entered is wrong.';
+      }
+    }
+    catch (err) {
       res = err.toString();
       
     }

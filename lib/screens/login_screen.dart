@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 textEditingController: _emailController,
               ),
               
-              SizedBox(height: 10,),
+              SizedBox(height: 24,),
               // text field input for password
               TextFieldInput(
                 hintText: 'Enter your pssword',

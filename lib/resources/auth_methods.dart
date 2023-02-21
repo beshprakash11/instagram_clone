@@ -29,6 +29,12 @@ class AuthMethods{
 
        //add user to our database
        _firestore.collection('users').doc(cred.user!.uid).set({
+        'username': username,
+        'uid': cred.user!.uid,
+        'email': email,
+        'bio': bio,
+        'followers': [],
+        'following': []
         
        });
 

@@ -47,6 +47,12 @@ class _SignupScreenState extends State<SignupScreen> {
           const SizedBox(
             height: 64,
           ),
+          // Circular widget to accept and show our selected file
+          Stack(
+            children: [
+              
+            ],
+          ),
           //text field input for username
           TextFieldInput(
             hintText: 'Enter your username',
@@ -132,7 +138,7 @@ class _SignupScreenState extends State<SignupScreen> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(4))),
             color: blueColor),
-        child: const Text('Log in'),
+        child: const Text('Sign up'),
       ),
     );
   }

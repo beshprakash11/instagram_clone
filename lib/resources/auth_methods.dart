@@ -72,7 +72,9 @@ class AuthMethods{
   }) async{
     String res = "Some of error occures.";
     try {
-      
+      if(email.isNotEmpty || password.isNotEmpty){
+        await _auth.signInWithEmailAndPassword(email: email, password: password);
+      }
     } catch (err) {
       
     }

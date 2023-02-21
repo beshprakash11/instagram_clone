@@ -5,7 +5,11 @@ class ResponsvieLayout extends StatelessWidget {
   final Widget webScreenLayout;
   final Widget mobileScreenLayout;
 
-  const ResponsvieLayout({Key? key, required this.webScreenLayout, required this.mobileScreenLayout}): super(key:  key)
+  const ResponsvieLayout({
+    Key? key, 
+    required this.webScreenLayout, 
+    required this.mobileScreenLayout
+  }): super(key:  key);
 
   @override
   Widget build(BuildContext context) {

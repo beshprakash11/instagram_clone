@@ -12,6 +12,15 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
               TextFieldInput(
                 hintText: 'Enter your name',
                 textInputType: TextInputType.emailAddress,
+                textEditingController: _emailController,
               ),
               
 

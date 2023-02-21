@@ -54,7 +54,7 @@ class _SignupScreenState extends State<SignupScreen> {
             textEditingController: _userController,
           ),
           const SizedBox(
-            height: 64,
+            height: 24,
           ),
           //text field input for email
           TextFieldInput(
@@ -75,6 +75,15 @@ class _SignupScreenState extends State<SignupScreen> {
           ),
           const SizedBox(
             height: 12,
+          ),
+          //text field input for bio
+          TextFieldInput(
+            hintText: 'Enter your bio',
+            textInputType: TextInputType.emailAddress,
+            textEditingController: _bioController,
+          ),
+          const SizedBox(
+            height: 24,
           ),
           // button login
           _buildLoginBtn(),

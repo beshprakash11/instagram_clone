@@ -44,7 +44,7 @@ class _SignupScreenState extends State<SignupScreen> {
             color: primaryColor,
             height: 64,
           ),
-          SizedBox(
+          const SizedBox(
             height: 64,
           ),
           //text field input for email
@@ -54,7 +54,7 @@ class _SignupScreenState extends State<SignupScreen> {
             textEditingController: _emailController,
           ),
 
-          SizedBox(
+          const SizedBox(
             height: 24,
           ),
           // text field input for password
@@ -64,7 +64,7 @@ class _SignupScreenState extends State<SignupScreen> {
             textEditingController: _passwordController,
             isPass: true,
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           // button login

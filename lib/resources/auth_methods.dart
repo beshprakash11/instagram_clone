@@ -70,6 +70,8 @@ class AuthMethods{
     required String email,
     required String password
   }){
+    String res = "Some of error occures.";
 
+    return res;
   }
 }

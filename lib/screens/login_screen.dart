@@ -52,6 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 hintText: 'Enter your pssword',
                 textInputType: TextInputType.emailAddress,
                 textEditingController: _passwordController,
+                isPass: true,
               ),
               // button login
               // Transitioning to sigining up

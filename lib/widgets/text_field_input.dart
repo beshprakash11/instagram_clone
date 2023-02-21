@@ -5,6 +5,16 @@ class TextFieldInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    final inputBorder = OutlineInputBorder(
+      borderSide: Divider.createBorderSide(context)
+    );
+    return TextField(
+      controller: ,
+      decoration: InputDecoration(
+        hintText: ,
+        border: ,
+        focusedBorder: 
+      ),
+    );
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
@@ -30,7 +32,7 @@ class _SignupScreenState extends State<SignupScreen> {
   }
 
   void selectImage() async{
-    await pickImage(ImageSource.gallery);
+    Uint8List im = await pickImage(ImageSource.gallery);
   }
   @override
   Widget build(BuildContext context) {

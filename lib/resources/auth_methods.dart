@@ -69,8 +69,13 @@ class AuthMethods{
   Future<String> loginUsers({
     required String email,
     required String password
-  }){
+  }) async{
     String res = "Some of error occures.";
+    try {
+      
+    } catch (err) {
+      
+    }
 
     return res;
   }

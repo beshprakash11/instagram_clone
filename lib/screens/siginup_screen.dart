@@ -33,6 +33,9 @@ class _SignupScreenState extends State<SignupScreen> {
 
   void selectImage() async{
     Uint8List im = await pickImage(ImageSource.gallery);
+    setState(() {
+      
+    });
   }
   @override
   Widget build(BuildContext context) {

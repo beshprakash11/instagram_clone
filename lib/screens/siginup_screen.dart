@@ -50,7 +50,7 @@ class _SignupScreenState extends State<SignupScreen> {
             bio: _bioController.text, file: _image!
           );
     if( res != 'success'){
-      
+      showSnackBar(res, context);
     }
   }
   @override

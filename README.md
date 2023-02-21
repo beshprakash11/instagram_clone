@@ -1,4 +1,4 @@
-# instagram_clone
+# Instagram clone
 
 
 # Packages uses

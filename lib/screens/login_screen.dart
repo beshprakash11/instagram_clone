@@ -10,13 +10,13 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child:Container(
-          padding: EdgeInsets.symmetric(horizontal: 32),
+          padding: const EdgeInsets.symmetric(horizontal: 32),
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               //svg images
-              SvgPicture.asset('assets/ic_instagram.svg', color: primaryColor,),
+              SvgPicture.asset('assets/ic_instagram.svg', color: primaryColor, height: 64,),
               
 
               //text field input for email

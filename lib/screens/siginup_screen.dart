@@ -41,6 +41,15 @@ class _SignupScreenState extends State<SignupScreen> {
     });
   }
 
+
+  void signUpUser() async{
+    String res = await AuthMethods().signUpUser(
+            email: _emailController.text,
+            password: _passwordController.text,
+            username: _userController.text,
+            bio: _bioController.text, file: _image!
+          );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -162,13 +171,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
   Widget _buildLoginBtn() {
     return InkWell(
-      onTap: () async {
-        String res = await AuthMethods().signUpUser(
-            email: _emailController.text,
-            password: _passwordController.text,
-            username: _userController.text,
-            bio: _bioController.text, file: _image!);
-      },
+      onTap: signUpUser,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 12),
         width: double.infinity,

@@ -55,6 +55,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 isPass: true,
               ),
               // button login
+              Container(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                width: double.infinity,
+                alignment: Alignment.center,
+                decoration: const ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(4)
+                    )
+                  ),
+                  color: blueColor
+                ),
+                child: const Text('Log in'),
+              ),
               // Transitioning to sigining up
             ]
           ),

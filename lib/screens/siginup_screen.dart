@@ -21,6 +21,9 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _bioController = TextEditingController();
   final TextEditingController _userController = TextEditingController();
 
+  //read images
+  Uint8List _image;
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -34,7 +37,7 @@ class _SignupScreenState extends State<SignupScreen> {
   void selectImage() async{
     Uint8List im = await pickImage(ImageSource.gallery);
     setState(() {
-      
+      _image = im;
     });
   }
   @override

@@ -22,7 +22,7 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _userController = TextEditingController();
 
   //read images
-  Uint8List _image;
+  Uint8List? _image;
 
   @override
   void dispose() {

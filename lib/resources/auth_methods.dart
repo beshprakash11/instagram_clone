@@ -1,11 +1,15 @@
+import 'dart:developer';
 import 'dart:typed_data';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthMethods{
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 
   //signup user
@@ -21,7 +25,10 @@ class AuthMethods{
       if(email.isNotEmpty || password.isNotEmpty || username.isNotEmpty || bio.isNotEmpty || file != null){
         // register users
        UserCredential cred = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-       print(cred.user.displayName!);
+       
+
+       //add user to our database
+
       }
     } catch (err) {
       res = err.toString();      

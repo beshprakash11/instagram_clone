@@ -52,7 +52,16 @@ class _SignupScreenState extends State<SignupScreen> {
             children: [
               CircleAvatar(
                 radius: 64,
-                backgroundImage: NetworkImage('https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'),
+                backgroundImage: NetworkImage(
+                    'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'),
+              ),
+              Positioned(
+                  bottom: -10,
+                  left: 80,
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.add_a_photo),
+                  )
               )
             ],
           ),
@@ -119,9 +128,7 @@ class _SignupScreenState extends State<SignupScreen> {
           child: Text('Don\'t have an account'),
         ),
         GestureDetector(
-          onTap: (){
-            
-          },
+          onTap: () {},
           child: Container(
             padding: EdgeInsets.all(8),
             child: Text(

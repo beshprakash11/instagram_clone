@@ -70,6 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 child: const Text('Log in'),
               ),
+              Flexible(child: Container(), flex: 1,),
               // Transitioning to sigining up
             ]
           ),

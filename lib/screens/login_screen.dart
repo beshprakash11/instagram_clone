@@ -54,6 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 textEditingController: _passwordController,
                 isPass: true,
               ),
+              SizedBox(height: 24,),
               // button login
               Container(
                 padding: const EdgeInsets.symmetric(vertical: 12),

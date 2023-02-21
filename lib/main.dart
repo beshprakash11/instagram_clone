@@ -10,7 +10,11 @@ void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   if(kIsWeb){
     await Firebase.initializeApp(
-      options: FirebaseOptions(apiKey: 'AIzaSyD7GK6Tb_H5730gRlCcArYxSYOg862GBrc', appId: appId, messagingSenderId: messagingSenderId, projectId: projectId)
+      options: FirebaseOptions(
+         apiKey: "AIzaSyD7GK6Tb_H5730gRlCcArYxSYOg862GBrc",
+         appId: "1:638657037864:web:83b34c2e2426950787171d", 
+         messagingSenderId: "638657037864", 
+         projectId: "instagram-clone-13760")
     );
   }else{
     await Firebase.initializeApp();

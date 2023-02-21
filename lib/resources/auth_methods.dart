@@ -28,6 +28,9 @@ class AuthMethods{
        
 
        //add user to our database
+       _firestore.collection('users').doc(cred.user!.uid).set({
+        
+       });
 
       }
     } catch (err) {

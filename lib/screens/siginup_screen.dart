@@ -47,9 +47,18 @@ class _SignupScreenState extends State<SignupScreen> {
           const SizedBox(
             height: 64,
           ),
+          //text field input for username
+          TextFieldInput(
+            hintText: 'Enter your username',
+            textInputType: TextInputType.emailAddress,
+            textEditingController: _userController,
+          ),
+          const SizedBox(
+            height: 64,
+          ),
           //text field input for email
           TextFieldInput(
-            hintText: 'Enter your name',
+            hintText: 'Enter your email',
             textInputType: TextInputType.emailAddress,
             textEditingController: _emailController,
           ),

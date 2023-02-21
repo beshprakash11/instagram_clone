@@ -18,7 +18,11 @@ class AuthMethods{
   }) async {
     String res = "Some error occured";
     try {
-      
+      if(email.isNotEmpty || password.isNotEmpty || username.isNotEmpty || bio.isNotEmpty || file != null){
+        // register users
+       UserCredential cred = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+       print(cred.user.displayName!);
+      }
     } catch (err) {
       res = err.toString();      
     }

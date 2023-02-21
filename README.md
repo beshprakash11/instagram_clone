@@ -5,6 +5,7 @@
 - cloud_firestore:- https://pub.dev/packages/cloud_firestore
 - firebase_auth:- https://pub.dev/packages/firebase_auth
 - firebase_storage :- https://pub.dev/packages/firebase_storage
+- flutter_svg:- https://pub.dev/packages/flutter_svg
 
 # Packages uses
 - Pubspec Assist for pubspec updated

@@ -56,26 +56,39 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 12,),
               // button login
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                width: double.infinity,
-                alignment: Alignment.center,
-                decoration: const ShapeDecoration(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(4)
-                    )
-                  ),
-                  color: blueColor
-                ),
-                child: const Text('Log in'),
-              ),
+              _buildLoginBtn(),
               Flexible(child: Container(), flex: 1,),
               // Transitioning to sigining up
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: Text('Don\'t have an account'),
+                  )
+                ],
+              )
             ]
           ),
         )
       ),
     );
+  }
+
+  Widget _buildLoginBtn() {
+    return Container(
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              width: double.infinity,
+              alignment: Alignment.center,
+              decoration: const ShapeDecoration(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(4)
+                  )
+                ),
+                color: blueColor
+              ),
+              child: const Text('Log in'),
+            );
   }
 }

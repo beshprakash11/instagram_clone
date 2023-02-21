@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:instagram_clone/resources/auth_methods.dart';
 import 'package:instagram_clone/utils/colors.dart';
+import 'package:instagram_clone/utils/utils.dart';
 import 'package:instagram_clone/widgets/text_field_input.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -27,8 +29,8 @@ class _SignupScreenState extends State<SignupScreen> {
     _userController.dispose();
   }
 
-  void selectImage(){
-
+  void selectImage() async{
+    await pickImage(ImageSource.gallery);
   }
   @override
   Widget build(BuildContext context) {

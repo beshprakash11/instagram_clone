@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:instagram_clone/resources/auth_methods.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/widgets/text_field_input.dart';
 
@@ -61,8 +62,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   child: IconButton(
                     onPressed: () {},
                     icon: Icon(Icons.add_a_photo),
-                  )
-              )
+                  ))
             ],
           ),
           const SizedBox(
@@ -143,6 +143,13 @@ class _SignupScreenState extends State<SignupScreen> {
 
   Widget _buildLoginBtn() {
     return InkWell(
+      onTap: () async {
+        String res = await AuthMethods().signUpUser(
+            email: _emailController.text,
+            password: _passwordController.text,
+            username: _userController.text,
+            bio: _bioController.text);
+      },
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 12),
         width: double.infinity,

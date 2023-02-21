@@ -167,7 +167,7 @@ class _SignupScreenState extends State<SignupScreen> {
             email: _emailController.text,
             password: _passwordController.text,
             username: _userController.text,
-            bio: _bioController.text);
+            bio: _bioController.text, file: _image!);
       },
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 12),

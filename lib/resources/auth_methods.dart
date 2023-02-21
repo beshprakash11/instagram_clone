@@ -66,7 +66,10 @@ class AuthMethods{
   }
 
   //login users
-  Future<String> loginUsers(){
-    
+  Future<String> loginUsers({
+    required String email,
+    required String password
+  }){
+
   }
 }

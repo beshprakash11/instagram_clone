@@ -9,3 +9,7 @@
 # Packages uses
 - Pubspec Assist for pubspec updated
 - Error lens for error traces
+
+
+# Firebase settings up: 6- setting up firebase
+- iOS settings up: 0-7:12 minutes

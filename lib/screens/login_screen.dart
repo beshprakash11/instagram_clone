@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
             color: primaryColor,
             height: 64,
           ),
-          SizedBox(
+          const SizedBox(
             height: 64,
           ),
           //text field input for email
@@ -50,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
             textEditingController: _emailController,
           ),
 
-          SizedBox(
+          const SizedBox(
             height: 24,
           ),
           // text field input for password
@@ -60,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
             textEditingController: _passwordController,
             isPass: true,
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           // button login
@@ -82,15 +82,15 @@ class _LoginScreenState extends State<LoginScreen> {
       children: [
         Container(
           padding: const EdgeInsets.symmetric(vertical: 8),
-          child: Text('Don\'t have an account'),
+          child: const Text('Don\'t have an account'),
         ),
         GestureDetector(
           onTap: (){
 
           },
           child: Container(
-            padding: EdgeInsets.all(8),
-            child: Text(
+            padding: const EdgeInsets.all(8),
+            child: const Text(
               'Sign up.',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),

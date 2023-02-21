@@ -49,6 +49,9 @@ class _SignupScreenState extends State<SignupScreen> {
             username: _userController.text,
             bio: _bioController.text, file: _image!
           );
+    if( res != 'success'){
+      
+    }
   }
   @override
   Widget build(BuildContext context) {

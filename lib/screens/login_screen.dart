@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           //text field input for email
           TextFieldInput(
-            hintText: 'Enter your name',
+            hintText: 'Enter your email',
             textInputType: TextInputType.emailAddress,
             textEditingController: _emailController,
           ),
@@ -86,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         GestureDetector(
           onTap: (){
-            
+
           },
           child: Container(
             padding: EdgeInsets.all(8),

@@ -102,6 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _buildLoginBtn() {
     return InkWell(
+      onTap: loginUser,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 12),
         width: double.infinity,

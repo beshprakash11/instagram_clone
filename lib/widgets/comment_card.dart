@@ -15,6 +15,20 @@ class _CommentCardState extends State<CommentCard> {
       child: Row(
         children: [
           _buildCardAvatar(),
+          _buildUserInfo(),
+        ],
+      ),
+    );
+  }
+
+  Padding _buildUserInfo() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          RichText(text: TextSpan(text: 'username', style: const TextStyle()))
         ],
       ),
     );

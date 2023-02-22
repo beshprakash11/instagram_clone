@@ -10,7 +10,7 @@ class WebScreenLayout extends StatefulWidget {
 }
 
 class _WebScreenLayoutState extends State<WebScreenLayout> {
- String username = "";
+  String username = "";
 
   @override
   void initState() {
@@ -18,7 +18,7 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
     getUsername();
   }
 
-  void getUsername() async{
+  void getUsername() async {
     DocumentSnapshot snap = await FirebaseFirestore.instance
         .collection('users')
         .doc(FirebaseAuth.instance.currentUser!.uid)
@@ -28,11 +28,12 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
       username = (snap.data() as Map<String, dynamic>)['username'];
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child:  Text('$username'),
+        child: Text('$username'),
       ),
     );
   }

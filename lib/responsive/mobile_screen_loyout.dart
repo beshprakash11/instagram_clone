@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class MobileScreenLayout extends StatefulWidget {
@@ -17,7 +18,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
   }
 
   void getUsername() async{
-    
+    FirebaseFirestore.instance.collection('users');
   }
   @override
   Widget build(BuildContext context) {

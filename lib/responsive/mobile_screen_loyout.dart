@@ -17,7 +17,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
     model.User user = Provider.of<UserProvider>(context).getUser;
     return Scaffold(
       body: Center(
-        child:  Text(user.username),
+        child:  Text(user.username == "" ? "Default" : user.username),
       ),
     );
   }

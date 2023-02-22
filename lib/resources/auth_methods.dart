@@ -10,79 +10,80 @@ import 'package:instagram_clone/resources/storage_methods.dart';
 
 import 'package:instagram_clone/models/users.dart' as model;
 
-class AuthMethods{
+class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-
   //signup user
-  Future<String> signUpUser({
-    required String email,
-    required String password,
-    required String username,
-    required String bio,
-    required Uint8List file
-  }) async {
+  Future<String> signUpUser(
+      {required String email,
+      required String password,
+      required String username,
+      required String bio,
+      required Uint8List file}) async {
     String res = "Some error occured";
     try {
-      if(email.isNotEmpty || password.isNotEmpty || username.isNotEmpty || bio.isNotEmpty  || file != null){
+      if (email.isNotEmpty ||
+          password.isNotEmpty ||
+          username.isNotEmpty ||
+          bio.isNotEmpty ||
+          file != null) {
         // register users
-       UserCredential cred = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-       
-       // upload images
-       String photoURL = await StorageMethods().uploadImageToStorage('profilePics', file, false);
+        UserCredential cred = await _auth.createUserWithEmailAndPassword(
+            email: email, password: password);
 
-       //add user to our database
-       model.User user = model.User(
-          email: email,
-          uid: cred.user!.uid,
-          photoUrl: photoURL, 
-          username: username, 
-          bio: bio, 
-          followers: [], 
-          following: []
-        );
+        // upload images
+        String photoURL = await StorageMethods()
+            .uploadImageToStorage('profilePics', file, false);
 
-       _firestore.collection('users').doc(cred.user!.uid).set(user.toJson(),);
-       res = "success";
+        //add user to our database
+        model.User user = model.User(
+            email: email,
+            uid: cred.user!.uid,
+            photoUrl: photoURL,
+            username: username,
+            bio: bio,
+            followers: [],
+            following: []);
+
+        _firestore.collection('users').doc(cred.user!.uid).set(
+              user.toJson(),
+            );
+        res = "success";
       }
-    } on FirebaseAuthException catch(err){
-      if(err.code == 'invalid-email'){
+    } on FirebaseAuthException catch (err) {
+      if (err.code == 'invalid-email') {
         res = 'The email is badly formatted';
-      }else if(err.code == 'weak-password'){
+      } else if (err.code == 'weak-password') {
         res = 'Password should be at least 6 caracterss';
       }
-    }
-    catch (err) {
-      res = err.toString();      
+    } catch (err) {
+      res = err.toString();
     }
 
     return res;
   }
 
   //login users
-  Future<String> loginUsers({
-    required String email,
-    required String password
-  }) async{
+  Future<String> loginUsers(
+      {required String email, required String password}) async {
     String res = "Some of error occures.";
     try {
-      if(email.isNotEmpty || password.isNotEmpty){
-        await _auth.signInWithEmailAndPassword(email: email, password: password);
-        res ="success";
-      }else{
+      if (email.isNotEmpty || password.isNotEmpty) {
+        await _auth.signInWithEmailAndPassword(
+            email: email, password: password);
+        res = "success";
+      } else {
         res = "Please enter all the fields";
       }
-    } on FirebaseAuthException catch(err){
-       if(err.code == 'user-not-found'){
+    } on FirebaseAuthException catch (err) {
+      if (err.code == 'user-not-found') {
         res = 'The given user email is not found.';
-      }else if(err.code == 'wrong-password'){
+      } else if (err.code == 'wrong-password') {
         res = 'Password you entered is wrong.';
       }
-    }
-    catch (err) {
+    } catch (err) {
       res = err.toString();
-      
     }
 
     return res;

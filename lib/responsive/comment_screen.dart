@@ -14,8 +14,8 @@ class _CommentScreenState extends State<CommentScreen> {
     return Scaffold(
       appBar: _buildAppBar(),
       bottomNavigationBar: _buildBottomNavbar(context),
-      body: Center(
-        child: const Text("Commet Screen"),
+      body: const Center(
+        child: Text("Commet Screen"),
       ),
     );
   }
@@ -40,16 +40,21 @@ class _CommentScreenState extends State<CommentScreen> {
           right: 8
         ),
         child: Row(
-          children: [
+          children: const [
             CircleAvatar(
               backgroundImage: NetworkImage('https://images.unsplash.com/photo-1589180176337-503fed4bcfe0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80'),
               radius: 18,
             ), 
             
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Comment as username',
-                border: InputBorder.none
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.only(left: 16, right: 8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Comment as username',
+                    border: InputBorder.none
+                  ),
+                ),
               ),
             ),
           ],

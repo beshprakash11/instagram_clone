@@ -32,7 +32,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child:  Text('$username'),
+        child:  Text('Mobile screen: $username'),
       ),
     );
   }

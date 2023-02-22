@@ -33,7 +33,7 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('$username'),
+        child: Text('Web screen: $username'),
       ),
     );
   }

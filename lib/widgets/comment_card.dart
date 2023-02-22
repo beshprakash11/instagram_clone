@@ -48,7 +48,7 @@ class _CommentCardState extends State<CommentCard> {
       padding: EdgeInsets.only(top: 4),
       child: Text(
         '22/02/2023',
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.white),
       ),
     );
   }

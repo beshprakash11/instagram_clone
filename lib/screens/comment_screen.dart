@@ -39,7 +39,14 @@ class _CommentScreenState extends State<CommentScreen> {
           children: [
             _buildCircularAvatar(),
             _buildCommentUser(),
-            InkWell()
+            InkWell(
+              onTap: () {},
+              child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                child: const Text('Post',
+                    style: TextStyle(color: Colors.blueAccent)),
+              ),
+            )
           ],
         ),
       ),
@@ -48,15 +55,14 @@ class _CommentScreenState extends State<CommentScreen> {
 
   Widget _buildCommentUser() {
     return const Expanded(
-            child: Padding(
-              padding: EdgeInsets.only(left: 16, right: 8.0),
-              child: TextField(
-                decoration: InputDecoration(
-                    hintText: 'Comment as username',
-                    border: InputBorder.none),
-              ),
-            ),
-          );
+      child: Padding(
+        padding: EdgeInsets.only(left: 16, right: 8.0),
+        child: TextField(
+          decoration: InputDecoration(
+              hintText: 'Comment as username', border: InputBorder.none),
+        ),
+      ),
+    );
   }
 
   Widget _buildCircularAvatar() {

@@ -5,6 +5,8 @@ import 'package:instagram_clone/models/users.dart' as model;
 import 'package:provider/provider.dart';
 
 import '../provider/user_provider.dart';
+import '../utils/colors.dart';
+import '../utils/dimensions.dart';
 
 class PostCard extends StatefulWidget {
   final snap;
@@ -56,6 +58,22 @@ class _PostCardState extends State<PostCard> {
     final model.User user = Provider.of<UserProvider>(context).getUser;
     final width = MediaQuery.of(context).size.width;
 
-    return Container();
+    return Container(
+      // boundary needed for web
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: width > webScreenSize ? secondaryColor : mobileBackgroundColor,
+        ),
+        color: mobileBackgroundColor,
+      ),
+      padding: const EdgeInsets.symmetric(
+        vertical: 10,
+      ),
+      child: Column(
+        children: [
+          
+        ],
+      ),
+    );
   }
 }

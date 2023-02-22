@@ -32,19 +32,23 @@ class _CommentCardState extends State<CommentCard> {
               text: const TextSpan(
                   text: 'username',
                   style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.white
-                    )
-              )
-          ),
+                      fontWeight: FontWeight.bold, color: Colors.white))),
           RichText(
               text: const TextSpan(
                   text: 'Some description to insert',
-                  style: TextStyle(color: Colors.white
-                )
-              )
-          ),
-        
+                  style: TextStyle(color: Colors.white))),
+          _buildDate()
         ],
+      ),
+    );
+  }
+
+  Padding _buildDate() {
+    return const Padding(
+      padding: EdgeInsets.only(top: 4),
+      child: Text(
+        '22/02/2023',
+        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
       ),
     );
   }

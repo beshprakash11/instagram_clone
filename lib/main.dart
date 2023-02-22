@@ -51,6 +51,13 @@ class MyApp extends StatelessWidget {
               return Center(child: Text('Some error occure'),);
             }
           }
+          if(snapshot.connectionState == ConnectionState.waiting){
+            return Center(
+              child: CircularProgressIndicator(
+                color: primaryColor,
+              ),
+            );
+          }
         },
       )//ResponsvieLayout(mobileScreenLayout: MobileScreenLayout(), webScreenLayout: WebScreenLayout(),)
     );

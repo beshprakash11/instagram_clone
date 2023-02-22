@@ -30,6 +30,10 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
   }
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Center(
+        child:  Text('$username'),
+      ),
+    );
   }
 }

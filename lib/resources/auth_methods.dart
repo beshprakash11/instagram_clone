@@ -22,6 +22,9 @@ class AuthMethods {
     .doc(currentUser.uid)
     .get();
 
+    return model.User(
+      followers: (snap.data() as Map<String, dynamic>['followers'])
+    );
   }
 
   //signup user

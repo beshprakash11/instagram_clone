@@ -9,6 +9,16 @@ class MobileScreenLayout extends StatefulWidget {
 
 class _MobileScreenLayoutState extends State<MobileScreenLayout> {
   String username = "";
+
+  @override
+  void initState() {
+    super.initState();
+    getUsername();
+  }
+
+  void getUsername() async{
+    
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -37,7 +37,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: mobileBackgroundColor
       ),
-      home:  LoginScreen()//ResponsvieLayout(mobileScreenLayout: MobileScreenLayout(), webScreenLayout: WebScreenLayout(),)
+      home:  StreamBuilder(
+        stream: ,
+        builder: (context, snapshot){},
+      )//ResponsvieLayout(mobileScreenLayout: MobileScreenLayout(), webScreenLayout: WebScreenLayout(),)
     );
   }
 }

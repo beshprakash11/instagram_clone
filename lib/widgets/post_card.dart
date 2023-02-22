@@ -76,9 +76,60 @@ class _PostCardState extends State<PostCard> {
           _buildPostHeader(user, context),
            // IMAGE SECTION OF THE POST
           _buildImageSectionPost(user, context),
+          // LIKE, COMMENT SECTION OF THE POST
+          _buildCommentLikePost(user, context),
         ],
       ),
     );
+  }
+
+  Widget _buildCommentLikePost(model.User user, BuildContext context) {
+    return Row(
+          children: <Widget>[
+            LikeAnimation(
+              isAnimating: widget.snap['likes'].contains(user.uid),
+              smallLike: true,
+              child: IconButton(
+                icon: widget.snap['likes'].contains(user.uid)
+                    ? const Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                      )
+                    : const Icon(
+                        Icons.favorite_border,
+                      ),
+                onPressed: () => FireStoreMethods().likePost(
+                  widget.snap['postId'].toString(),
+                  user.uid,
+                  widget.snap['likes'],
+                ),
+              ),
+            ),
+            IconButton(
+              icon: const Icon(
+                Icons.comment_outlined,
+              ),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => CommentsScreen(
+                    postId: widget.snap['postId'].toString(),
+                  ),
+                ),
+              ),
+            ),
+            IconButton(
+                icon: const Icon(
+                  Icons.send,
+                ),
+                onPressed: () {}),
+            Expanded(
+                child: Align(
+              alignment: Alignment.bottomRight,
+              child: IconButton(
+                  icon: const Icon(Icons.bookmark_border), onPressed: () {}),
+            ))
+          ],
+        );
   }
 
   Widget _buildImageSectionPost(model.User user, BuildContext context) {

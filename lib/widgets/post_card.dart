@@ -1,13 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/resources/firestore_methods.dart';
-import 'package:instagram_clone/responsive/comment_screen.dart';
+import 'package:instagram_clone/screens/comment_screen.dart';
 import 'package:instagram_clone/utils/utils.dart';
 import 'package:instagram_clone/models/users.dart' as model;
 import 'package:instagram_clone/widgets/like_animation.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
-
 
 import '../provider/user_provider.dart';
 import '../utils/colors.dart';
@@ -187,7 +186,7 @@ class _PostCardState extends State<PostCard> {
           ),
           onPressed: () => Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) =>CommentScreen(),
+              builder: (context) => CommentScreen(),
             ),
           ),
         ),
@@ -329,4 +328,3 @@ class _PostCardState extends State<PostCard> {
     );
   }
 }
-

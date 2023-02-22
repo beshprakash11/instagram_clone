@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/provider/user_provider.dart';
+import 'package:instagram_clone/screens/comment_screen.dart';
+import 'package:instagram_clone/widgets/post_card.dart';
 import 'package:provider/provider.dart';
 import 'package:instagram_clone/models/users.dart' as model;
 
@@ -17,7 +19,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
     model.User user = Provider.of<UserProvider>(context).getUser;
     return Scaffold(
       body: Center(
-        child:  Text(user.username),
+        child:  CommentScreen(),
       ),
     );
   }

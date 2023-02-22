@@ -13,14 +13,17 @@ class _CommentCardState extends State<CommentCard> {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 16),
       child: Row(
-        children: [
-          _buildCardAvatar(),
-          _buildUserInfo(),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Icon(Icons.favorite, size: 16,),
-          )
-        ],
+        children: [_buildCardAvatar(), _buildUserInfo(), _buildFavorite()],
+      ),
+    );
+  }
+
+  Widget _buildFavorite() {
+    return Container(
+      padding: const EdgeInsets.all(8),
+      child: const Icon(
+        Icons.favorite,
+        size: 16,
       ),
     );
   }
@@ -46,7 +49,6 @@ class _CommentCardState extends State<CommentCard> {
           )),
           _buildDate()
         ],
-        
       ),
     );
   }

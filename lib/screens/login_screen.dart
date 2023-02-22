@@ -31,9 +31,9 @@ class _LoginScreenState extends State<LoginScreen> {
     });
     String res = await AuthMethods().loginUsers(email: _emailController.text, password: _passwordController.text);
     if (res == 'success'){
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => HomeScreen())
-      );
+      /*Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) =>() )
+      );*/
     }else{
       showSnackBar(res, context);
     }

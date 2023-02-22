@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:instagram_clone/resources/auth_methods.dart';
+import 'package:instagram_clone/screens/login_screen.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/utils/utils.dart';
 import 'package:instagram_clone/widgets/text_field_input.dart';
@@ -62,6 +63,12 @@ class _SignupScreenState extends State<SignupScreen> {
     }else{
 
     }
+  }
+
+  void navigateToSignIn(){
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const LoginScreen())
+    );
   }
   @override
   Widget build(BuildContext context) {
@@ -169,7 +176,7 @@ class _SignupScreenState extends State<SignupScreen> {
           child: const Text('Do you already have an account?'),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: navigateToSignIn,
           child: Container(
             padding: const EdgeInsets.all(8),
             child: const Text(

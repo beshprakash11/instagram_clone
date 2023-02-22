@@ -41,6 +41,10 @@ class _CommentScreenState extends State<CommentScreen> {
         ),
         child: Row(
           children: [
+            CircleAvatar(
+              backgroundImage: NetworkImage('https://images.unsplash.com/photo-1589180176337-503fed4bcfe0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80'),
+
+            ), 
             
           ],
         ),

@@ -39,8 +39,10 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: mobileBackgroundColor
       ),
       home:  StreamBuilder(
-        stream: FirebaseAuth.instance.idTokenChanges(),
-        builder: (context, snapshot){},
+        stream: FirebaseAuth.instance.userChanges(),
+        builder: (context, snapshot){
+
+        },
       )//ResponsvieLayout(mobileScreenLayout: MobileScreenLayout(), webScreenLayout: WebScreenLayout(),)
     );
   }

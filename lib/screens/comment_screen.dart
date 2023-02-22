@@ -32,34 +32,38 @@ class _CommentScreenState extends State<CommentScreen> {
     return SafeArea(
       child: Container(
         height: kToolbarHeight,
-        margin: EdgeInsets.only(
-          bottom: MediaQuery.of(context).viewInsets.bottom
-        ),
-        padding: const EdgeInsets.only(
-          left: 16,
-          right: 8
-        ),
+        margin:
+            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        padding: const EdgeInsets.only(left: 16, right: 8),
         child: Row(
-          children: const [
-            CircleAvatar(
-              backgroundImage: NetworkImage('https://images.unsplash.com/photo-1589180176337-503fed4bcfe0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80'),
-              radius: 18,
-            ), 
-            
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.only(left: 16, right: 8.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Comment as username',
-                    border: InputBorder.none
-                  ),
-                ),
-              ),
-            ),
+          children: [
+            _buildCircularAvatar(),
+            _buildCommentUser(),
+            InkWell()
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildCommentUser() {
+    return const Expanded(
+            child: Padding(
+              padding: EdgeInsets.only(left: 16, right: 8.0),
+              child: TextField(
+                decoration: InputDecoration(
+                    hintText: 'Comment as username',
+                    border: InputBorder.none),
+              ),
+            ),
+          );
+  }
+
+  Widget _buildCircularAvatar() {
+    return const CircleAvatar(
+      backgroundImage: NetworkImage(
+          'https://images.unsplash.com/photo-1589180176337-503fed4bcfe0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80'),
+      radius: 18,
     );
   }
 }

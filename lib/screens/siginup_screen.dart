@@ -9,6 +9,10 @@ import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/utils/utils.dart';
 import 'package:instagram_clone/widgets/text_field_input.dart';
 
+import '../responsive/mobile_screen_loyout.dart';
+import '../responsive/responsive_layout_screen.dart';
+import '../responsive/web_screen_layout.dart';
+
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
@@ -61,6 +65,14 @@ class _SignupScreenState extends State<SignupScreen> {
     if( res != 'success'){
       showSnackBar(res, context);
     }else{
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const ResponsvieLayout(
+                mobileScreenLayout: MobileScreenLayout(),
+                 webScreenLayout: WebScreenLayout(),
+              )
+        )
+      );
 
     }
   }

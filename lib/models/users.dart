@@ -4,17 +4,17 @@ import 'package:flutter/material.dart';
 class User{
   final String username;
   final String uid;
-  final String photoUrl;
   final String email;
+  final String photoUrl;  
   final String bio;
   final List followers;
   final List following;
 
   const User({
-    required this.email,
-    required this.uid,
-    required this.photoUrl,
     required this.username,
+    required this.uid,
+    required this.email,    
+    required this.photoUrl,    
     required this.bio,
     required this.followers,
     required this.following
@@ -34,10 +34,10 @@ class User{
   static User fromSnam(DocumentSnapshot snap){
     var snapshot = snap.data as Map<String, dynamic>;
     return User(
-      email: snapshot['email'], 
+      username: snapshot['username'],
       uid: snapshot['uid'], 
-      photoUrl:snapshot['photoUrl'], 
-      username: snapshot['username'], 
+      email: snapshot['email'], 
+      photoUrl:snapshot['photoUrl'],        
       bio: snapshot['bio'], 
       followers: snapshot['followers'], 
       following: snapshot['following']);

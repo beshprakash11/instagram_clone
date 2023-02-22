@@ -43,9 +43,7 @@ class AuthMethods{
           following: []
         );
 
-       _firestore.collection('users').doc(cred.user!.uid).set({
-              
-       });
+       _firestore.collection('users').doc(cred.user!.uid).set(user.toJson(),);
        res = "success";
       }
     } on FirebaseAuthException catch(err){

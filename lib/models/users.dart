@@ -6,8 +6,8 @@ class User{
   final String photoUrl;
   final String email;
   final String bio;
-  final String followers;
-  final String following;
+  final List followers;
+  final List following;
 
   const User({
     required this.email,
@@ -27,6 +27,5 @@ class User{
     "bio": bio,
     "followers": followers,
     "following": following
-
   };
 }

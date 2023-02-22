@@ -53,6 +53,7 @@ class _PostCardState extends State<PostCard> {
       );
     }
   }
+
   @override
   Widget build(BuildContext context) {
     final model.User user = Provider.of<UserProvider>(context).getUser;
@@ -71,9 +72,89 @@ class _PostCardState extends State<PostCard> {
       ),
       child: Column(
         children: [
-          
+          // HEADER SECTION OF THE POST
+          _buildPostHeader(user, context),
         ],
       ),
     );
+  }
+
+  Widget _buildPostHeader(model.User user, BuildContext context) {
+    return Container(
+          padding: const EdgeInsets.symmetric(
+            vertical: 4,
+            horizontal: 16,
+          ).copyWith(right: 0),
+          child: Row(
+            children: <Widget>[
+              CircleAvatar(
+                radius: 16,
+                backgroundImage: NetworkImage(
+                  widget.snap['profImage'].toString(),
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 8,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        widget.snap['username'].toString(),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              widget.snap['uid'].toString() == user.uid
+                  ? IconButton(
+                      onPressed: () {
+                        showDialog(
+                          useRootNavigator: false,
+                          context: context,
+                          builder: (context) {
+                            return Dialog(
+                              child: ListView(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 16),
+                                  shrinkWrap: true,
+                                  children: [
+                                    'Delete',
+                                  ]
+                                      .map(
+                                        (e) => InkWell(
+                                            child: Container(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 12,
+                                                      horizontal: 16),
+                                              child: Text(e),
+                                            ),
+                                            onTap: () {
+                                              deletePost(
+                                                widget.snap['postId']
+                                                    .toString(),
+                                              );
+                                              // remove the dialog box
+                                              Navigator.of(context).pop();
+                                            }),
+                                      )
+                                      .toList()),
+                            );
+                          },
+                        );
+                      },
+                      icon: const Icon(Icons.more_vert),
+                    )
+                  : Container(),
+            ],
+          ),
+        );
   }
 }

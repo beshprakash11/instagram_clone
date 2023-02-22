@@ -28,7 +28,8 @@ class _CommentCardState extends State<CommentCard> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          RichText(text: TextSpan(text: 'username', style: const TextStyle()))
+          RichText(text: TextSpan(text: 'username', style: const TextStyle(fontWeight: FontWeight.bold))),
+          RichText(text: TextSpan(text: 'Some description to insert')),
         ],
       ),
     );

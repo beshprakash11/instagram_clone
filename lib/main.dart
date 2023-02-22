@@ -47,6 +47,8 @@ class MyApp extends StatelessWidget {
                 mobileScreenLayout: MobileScreenLayout(),
                  webScreenLayout: WebScreenLayout(),
               );
+            }else if(snapshot.hasError){
+              return Center(child: Text('Some error occure'),);
             }
           }
         },

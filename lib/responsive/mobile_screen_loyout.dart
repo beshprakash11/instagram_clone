@@ -23,14 +23,16 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
         .collection('users')
         .doc(FirebaseAuth.instance.currentUser!.uid)
         .get();
-    print(snap.data());
-  
+    //print(snap.data());
+    setState(() {
+      username = (snap.data() as Map<String, dynamic>)['username'];
+    });
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("This is mobile"),
+        child:  Text("This is mobile"),
       ),
     );
   }

@@ -23,6 +23,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
         .collection('users')
         .doc(FirebaseAuth.instance.currentUser!.uid)
         .get();
+    print(snap.data());
   
   }
   @override

@@ -16,6 +16,10 @@ class _CommentCardState extends State<CommentCard> {
         children: [
           _buildCardAvatar(),
           _buildUserInfo(),
+          Container(
+            padding: const EdgeInsets.all(8),
+            child: const Icon(Icons.favorite, size: 16,),
+          )
         ],
       ),
     );

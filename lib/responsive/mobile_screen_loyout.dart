@@ -19,7 +19,10 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
   }
 
   void getUsername() async{
-    FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser!.uid).get();
+    DocumentSnapshot snap = await FirebaseFirestore.instance
+                                .collection('users')
+                                .doc(FirebaseAuth.instance.currentUser!.uid)
+                                .get();
   }
   @override
   Widget build(BuildContext context) {

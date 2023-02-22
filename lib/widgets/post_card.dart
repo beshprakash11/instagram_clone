@@ -1,5 +1,8 @@
+import 'package:flutter/material.dart';
+
 class PostCard extends StatefulWidget {
-  const PostCard({super.key});
+  final snap;
+  const PostCard({Key? key, required this.snap}) : super(key: key);
 
   @override
   State<PostCard> createState() => _PostCardState();

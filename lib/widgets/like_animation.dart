@@ -33,7 +33,15 @@ class _LikeAnimationState extends State<LikeAnimation> with SingleTickerProvider
     scale = Tween<double>(begin: 1, end: 1.2).animate(controller);
   }
 
-  
+  @override
+  void didUpdateWidget(covariant LikeAnimation oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (widget.isAnimating != oldWidget.isAnimating) {
+      startAnimation();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container();

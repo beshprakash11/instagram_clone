@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: mobileBackgroundColor
       ),
       home:  StreamBuilder(
-        stream: FirebaseAuth.instance.userChanges(),
+        stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot){
 
         },

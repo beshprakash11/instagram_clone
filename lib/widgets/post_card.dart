@@ -74,9 +74,59 @@ class _PostCardState extends State<PostCard> {
         children: [
           // HEADER SECTION OF THE POST
           _buildPostHeader(user, context),
+           // IMAGE SECTION OF THE POST
+          _buildImageSectionPost(user, context),
         ],
       ),
     );
+  }
+
+  Widget _buildImageSectionPost(model.User user, BuildContext context) {
+    return GestureDetector(
+          onDoubleTap: () {
+            FireStoreMethods().likePost(
+              widget.snap['postId'].toString(),
+              user.uid,
+              widget.snap['likes'],
+            );
+            setState(() {
+              isLikeAnimating = true;
+            });
+          },
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.35,
+                width: double.infinity,
+                child: Image.network(
+                  widget.snap['postUrl'].toString(),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              AnimatedOpacity(
+                duration: const Duration(milliseconds: 200),
+                opacity: isLikeAnimating ? 1 : 0,
+                child: LikeAnimation(
+                  isAnimating: isLikeAnimating,
+                  child: const Icon(
+                    Icons.favorite,
+                    color: Colors.white,
+                    size: 100,
+                  ),
+                  duration: const Duration(
+                    milliseconds: 400,
+                  ),
+                  onEnd: () {
+                    setState(() {
+                      isLikeAnimating = false;
+                    });
+                  },
+                ),
+              ),
+            ],
+          ),
+        );
   }
 
   Widget _buildPostHeader(model.User user, BuildContext context) {
@@ -157,4 +207,6 @@ class _PostCardState extends State<PostCard> {
           ),
         );
   }
+
+
 }

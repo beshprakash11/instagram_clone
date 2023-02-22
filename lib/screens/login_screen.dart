@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:instagram_clone/resources/auth_methods.dart';
+import 'package:instagram_clone/screens/siginup_screen.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/utils/utils.dart';
 import 'package:instagram_clone/widgets/text_field_input.dart';
@@ -40,6 +41,12 @@ class _LoginScreenState extends State<LoginScreen> {
     setState(() {
       _isLoading = false;
     });
+  }
+
+  void navigateToSignUp(){
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const SignupScreen())
+    );
   }
 
   @override
@@ -105,9 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: const Text('Don\'t have an account'),
         ),
         GestureDetector(
-          onTap: (){
-
-          },
+          onTap: navigateToSignUp,
           child: Container(
             padding: const EdgeInsets.all(8),
             child: const Text(

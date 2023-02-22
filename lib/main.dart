@@ -10,19 +10,17 @@ import 'package:instagram_clone/screens/login_screen.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:provider/provider.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  if(kIsWeb){
+  if (kIsWeb) {
     await Firebase.initializeApp(
-      options: const FirebaseOptions(
-         apiKey: "AIzaSyD7GK6Tb_H5730gRlCcArYxSYOg862GBrc",
-         appId: "1:638657037864:web:83b34c2e2426950787171d", 
-         messagingSenderId: "638657037864", 
-         projectId: "instagram-clone-13760",
-         storageBucket: "instagram-clone-13760.appspot.com"
-      )
-    );
-  }else{
+        options: const FirebaseOptions(
+            apiKey: "AIzaSyD7GK6Tb_H5730gRlCcArYxSYOg862GBrc",
+            appId: "1:638657037864:web:83b34c2e2426950787171d",
+            messagingSenderId: "638657037864",
+            projectId: "instagram-clone-13760",
+            storageBucket: "instagram-clone-13760.appspot.com"));
+  } else {
     await Firebase.initializeApp();
   }
   await Firebase.initializeApp();
@@ -35,39 +33,42 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => UserProvider())
+        ChangeNotifierProvider(
+          create: (_) => UserProvider(),
+        ),
       ],
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Instagram Clone',
-        theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: mobileBackgroundColor
-        ),
-        home:  StreamBuilder(
-          stream: FirebaseAuth.instance.authStateChanges(),
-          builder: (context, snapshot){
-            if(snapshot.connectionState == ConnectionState.active){
-              if(snapshot.hasData){
-                return const ResponsvieLayout(
-                  mobileScreenLayout: MobileScreenLayout(),
-                   webScreenLayout: WebScreenLayout(),
-                );
-              }else if(snapshot.hasError){
-                return const Center(child: Text('Some error occure'),);
+          debugShowCheckedModeBanner: false,
+          title: 'Instagram Clone',
+          theme: ThemeData.dark()
+              .copyWith(scaffoldBackgroundColor: mobileBackgroundColor),
+          home: StreamBuilder(
+            stream: FirebaseAuth.instance.authStateChanges(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.active) {
+                if (snapshot.hasData) {
+                  return const ResponsvieLayout(
+                    mobileScreenLayout: MobileScreenLayout(),
+                    webScreenLayout: WebScreenLayout(),
+                  );
+                } else if (snapshot.hasError) {
+                  return const Center(
+                    child: Text('Some error occure'),
+                  );
+                }
               }
-            }
-            if(snapshot.connectionState == ConnectionState.waiting){
-              return const Center(
-                child: CircularProgressIndicator(
-                  color: primaryColor,
-                ),
-              );
-            }
-    
-            return const LoginScreen();
-          },
-        )//ResponsvieLayout(mobileScreenLayout: MobileScreenLayout(), webScreenLayout: WebScreenLayout(),)
-      ),
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(
+                  child: CircularProgressIndicator(
+                    color: primaryColor,
+                  ),
+                );
+              }
+
+              return const LoginScreen();
+            },
+          ) //ResponsvieLayout(mobileScreenLayout: MobileScreenLayout(), webScreenLayout: WebScreenLayout(),)
+          ),
     );
   }
 }

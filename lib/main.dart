@@ -41,7 +41,14 @@ class MyApp extends StatelessWidget {
       home:  StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot){
-
+          if(snapshot.connectionState == ConnectionState.active){
+            if(snapshot.hasData){
+              return const ResponsvieLayout(
+                mobileScreenLayout: MobileScreenLayout(),
+                 webScreenLayout: WebScreenLayout(),
+              );
+            }
+          }
         },
       )//ResponsvieLayout(mobileScreenLayout: MobileScreenLayout(), webScreenLayout: WebScreenLayout(),)
     );

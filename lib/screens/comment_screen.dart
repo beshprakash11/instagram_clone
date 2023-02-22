@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/utils/colors.dart';
+import 'package:instagram_clone/widgets/comment_card.dart';
 
 class CommentScreen extends StatefulWidget {
   const CommentScreen({super.key});
@@ -14,9 +15,7 @@ class _CommentScreenState extends State<CommentScreen> {
     return Scaffold(
       appBar: _buildAppBar(),
       bottomNavigationBar: _buildBottomNavbar(context),
-      body: const Center(
-        child: Text("Commet Screen"),
-      ),
+      body: CommentCard(),
     );
   }
 

@@ -78,9 +78,83 @@ class _PostCardState extends State<PostCard> {
           _buildImageSectionPost(user, context),
           // LIKE, COMMENT SECTION OF THE POST
           _buildCommentLikePost(user, context),
+          //DESCRIPTION AND NUMBER OF COMMENTS
+          _buildDescriptionAndNumberofComments(context)
         ],
       ),
     );
+  }
+
+  Widget _buildDescriptionAndNumberofComments(BuildContext context) {
+    return Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              DefaultTextStyle(
+                  style: Theme.of(context)
+                      .textTheme
+                      .subtitle2!
+                      .copyWith(fontWeight: FontWeight.w800),
+                  child: Text(
+                    '${widget.snap['likes'].length} likes',
+                    style: Theme.of(context).textTheme.bodyText2,
+                  )),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.only(
+                  top: 8,
+                ),
+                child: RichText(
+                  text: TextSpan(
+                    style: const TextStyle(color: primaryColor),
+                    children: [
+                      TextSpan(
+                        text: widget.snap['username'].toString(),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextSpan(
+                        text: ' ${widget.snap['description']}',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              InkWell(
+                child: Container(
+                  child: Text(
+                    'View all $commentLen comments',
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: secondaryColor,
+                    ),
+                  ),
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                ),
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => CommentsScreen(
+                      postId: widget.snap['postId'].toString(),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                child: Text(
+                  DateFormat.yMMMd()
+                      .format(widget.snap['datePublished'].toDate()),
+                  style: const TextStyle(
+                    color: secondaryColor,
+                  ),
+                ),
+                padding: const EdgeInsets.symmetric(vertical: 4),
+              ),
+            ],
+          ),
+        );
   }
 
   Widget _buildCommentLikePost(model.User user, BuildContext context) {

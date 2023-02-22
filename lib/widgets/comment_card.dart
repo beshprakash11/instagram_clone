@@ -28,27 +28,29 @@ class _CommentCardState extends State<CommentCard> {
     );
   }
 
-  Padding _buildUserInfo() {
-    return Padding(
-      padding: const EdgeInsets.only(left: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          RichText(
-              text: const TextSpan(
-            children: [
-              TextSpan(
-                  text: 'username',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.white)),
-              TextSpan(
-                  text: 'Some description to insert',
-                  style: TextStyle(color: Colors.white))
-            ],
-          )),
-          _buildDate()
-        ],
+  Widget _buildUserInfo() {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.only(left: 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            RichText(
+                text: const TextSpan(
+              children: [
+                TextSpan(
+                    text: 'username',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.white)),
+                TextSpan(
+                    text: 'Some description to insert',
+                    style: TextStyle(color: Colors.white))
+              ],
+            )),
+            _buildDate()
+          ],
+        ),
       ),
     );
   }

@@ -1,6 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/utils/utils.dart';
+import 'package:instagram_clone/models/users.dart' as model;
+import 'package:provider/provider.dart';
+
+import '../provider/user_provider.dart';
 
 class PostCard extends StatefulWidget {
   final snap;
@@ -49,6 +53,9 @@ class _PostCardState extends State<PostCard> {
   }
   @override
   Widget build(BuildContext context) {
+    final model.User user = Provider.of<UserProvider>(context).getUser;
+    final width = MediaQuery.of(context).size.width;
+
     return Container();
   }
 }

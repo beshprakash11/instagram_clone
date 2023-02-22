@@ -8,6 +8,13 @@ class WebScreenLayout extends StatefulWidget {
 }
 
 class _WebScreenLayoutState extends State<WebScreenLayout> {
+ String username = "";
+
+  @override
+  void initState() {
+    super.initState();
+    getUsername();
+  }
   @override
   Widget build(BuildContext context) {
     return Container();

@@ -42,6 +42,20 @@ class _LikeAnimationState extends State<LikeAnimation> with SingleTickerProvider
     }
   }
 
+  startAnimation() async {
+    if (widget.isAnimating || widget.smallLike) {
+      await controller.forward();
+      await controller.reverse();
+      await Future.delayed(
+        const Duration(milliseconds: 200),
+      );
+
+      if (widget.onEnd != null) {
+        widget.onEnd!();
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container();

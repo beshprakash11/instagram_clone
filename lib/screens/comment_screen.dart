@@ -39,16 +39,19 @@ class _CommentScreenState extends State<CommentScreen> {
           children: [
             _buildCircularAvatar(),
             _buildCommentUser(),
-            InkWell(
-              onTap: () {},
-              child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-                child: const Text('Post',
-                    style: TextStyle(color: Colors.blueAccent)),
-              ),
-            )
+            _buildPostBtn()
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildPostBtn() {
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+        child: const Text('Post', style: TextStyle(color: blueColor)),
       ),
     );
   }

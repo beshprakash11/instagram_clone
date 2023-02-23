@@ -62,18 +62,39 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.home,
-                color: (_page == 0) ? primaryColor : secondaryColor,          
+                color: (_page == 0) ? primaryColor : secondaryColor,
               ),
               label: '',
-              backgroundColor: primaryColor
+              backgroundColor: primaryColor),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.search,
+                color: (_page == 1) ? primaryColor : secondaryColor,
+              ),
+              label: '',
+              backgroundColor: primaryColor),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.add_circle,
+                color: (_page == 2) ? primaryColor : secondaryColor,
+              ),
+              label: '',
+              backgroundColor: primaryColor),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.favorite,
+              color: (_page == 3) ? primaryColor : secondaryColor,
+            ),
+            label: '',
+            backgroundColor: primaryColor,
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.search,
-              color: (_page == 1) ? primaryColor : secondaryColor,
+              Icons.person,
+              color: (_page == 4) ? primaryColor : secondaryColor,
             ),
             label: '',
-            backgroundColor: primaryColor
+            backgroundColor: primaryColor,
           ),
         ],
       ),

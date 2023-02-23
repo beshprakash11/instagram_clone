@@ -59,29 +59,32 @@ class _AddPostScreenState extends State<AddPostScreen> {
   @override
   Widget build(BuildContext context) {
     final User user = Provider.of<UserProvider>(context).getUser;
-    return _file == null ? Center(
-      child: IconButton(
-        icon: const Icon(Icons.upload),
-        onPressed: () => _selectImage(context),
-      ),
-    )
-    : Scaffold(
-      appBar: _buildAppBar(),
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildLeftCaption(user.photoUrl),
-              _buildInputCaption(context),
-              _buildRightCaption(),
-              const Divider(),
-            ],
+    return _file == null
+        ? Center(
+            child: IconButton(
+              icon: const Icon(Icons.upload),
+              onPressed: () => _selectImage(context),
+            ),
           )
-        ],
-      ),
-    );
+        : Scaffold(
+            appBar: _buildAppBar(),
+            body: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: NetworkImage(user.photoUrl),
+                    ),
+                    _buildInputCaption(context),
+                    _buildRightCaption(),
+                    const Divider(),
+                  ],
+                )
+              ],
+            ),
+          );
   }
 
   Widget _buildLeftCaption(String url) {

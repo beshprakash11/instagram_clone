@@ -34,7 +34,9 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
     });
   }
 
-  
+  void navigationTapped(int page){
+    pageController.jumpToPage(page);
+  }  
 
   @override
   Widget build(BuildContext context) {

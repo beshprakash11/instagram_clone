@@ -53,6 +53,12 @@ class _AddPostScreenState extends State<AddPostScreen> {
 
   @override
   Widget build(BuildContext context) {
+    return Center(
+      child: IconButton(
+        icon: const Icon(Icons.upload),
+        onPressed: (){},
+      ),
+    );
     return Scaffold(
       appBar: _buildAppBar(),
       body: Column(

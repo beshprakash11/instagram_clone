@@ -1,8 +1,13 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:instagram_clone/models/users.dart';
+import 'package:instagram_clone/provider/user_provider.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/utils/utils.dart';
+import 'package:provider/provider.dart';
 
 class AddPostScreen extends StatefulWidget {
   const AddPostScreen({super.key});
@@ -53,6 +58,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final User user = Provider.of<UserProvider>(context).getUser;
     return _file == null ? Center(
       child: IconButton(
         icon: const Icon(Icons.upload),
@@ -67,7 +73,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildLeftCaption(),
+              _buildLeftCaption(user.photoUrl),
               _buildInputCaption(context),
               _buildRightCaption(),
               const Divider(),
@@ -78,10 +84,9 @@ class _AddPostScreenState extends State<AddPostScreen> {
     );
   }
 
-  CircleAvatar _buildLeftCaption() {
-    return const CircleAvatar(
-      backgroundImage: NetworkImage(
-          'https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
+  Widget _buildLeftCaption(String url) {
+    return CircleAvatar(
+      backgroundImage: NetworkImage(url),
     );
   }
 

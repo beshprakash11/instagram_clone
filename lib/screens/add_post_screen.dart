@@ -100,7 +100,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
         child: Container(
           decoration: const BoxDecoration(
               image: DecorationImage(
-                  image:MemoryImage(_file),
+                  image: MemoryImage(_file!),
                   fit: BoxFit.fill,
                   alignment: FractionalOffset.topCenter)),
         ),

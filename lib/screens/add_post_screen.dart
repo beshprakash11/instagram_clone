@@ -55,7 +55,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
               SimpleDialogOption(
                 padding: const EdgeInsets.all(20),
                 child: const Text('Cancel'),
-                onPressed: ()  {
+                onPressed: () {
                   Navigator.of(context).pop();
                 },
               )
@@ -82,7 +82,9 @@ class _AddPostScreenState extends State<AddPostScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _buildLeftCaption(user.photoUrl,),
+                    _buildLeftCaption(
+                      user.photoUrl,
+                    ),
                     _buildInputCaption(context),
                     _buildRightCaption(),
                     const Divider(),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/provider/user_provider.dart';
 import 'package:instagram_clone/screens/comment_screen.dart';
 import 'package:instagram_clone/widgets/post_card.dart';
@@ -54,7 +56,12 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
         controller: pageController,
         onPageChanged: onPageChanged,
       ),
-      bottomNavigationBar: ,
+      bottomNavigationBar: CupertinoTabBar(
+        backgroundColor: mobileBackgroundColor,
+        items: [
+          
+        ],
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/utils/utils.dart';
 
@@ -21,7 +22,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
             child: const Text('Take a Photo'),
             onPressed: () async{
               Navigator.of(context).pop();
-              Uint8List file = await pickImage(source);
+              Uint8List file = await pickImage(ImageSource.camera,);
             },
           )
         ],

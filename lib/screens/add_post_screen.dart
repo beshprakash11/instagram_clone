@@ -24,6 +24,11 @@ class _AddPostScreenState extends State<AddPostScreen> {
     String username,
     String profImage
   ){
+    try {
+      
+    } catch (err) {
+      
+    }
 
   }
   _selectImage(BuildContext context) async {

@@ -19,6 +19,11 @@ class _AddPostScreenState extends State<AddPostScreen> {
     );*/
     return Scaffold(
       appBar: _buildAppBar(),
+      body: Column(
+        children: [
+          
+        ],
+      ),
     );
   }
 

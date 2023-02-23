@@ -23,6 +23,20 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    pageController.dispose();
+  }
+
+  void onPageChanged(int page){
+    setState(() {
+      _page = page;
+    });
+  }
+
+  
+
+  @override
   Widget build(BuildContext context) {
     model.User user = Provider.of<UserProvider>(context).getUser;
     return Scaffold(

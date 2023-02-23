@@ -18,29 +18,33 @@ class _AddPostScreenState extends State<AddPostScreen> {
       ),
     );*/
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: mobileBackgroundColor,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: (){},
-        ),
-        title: const Text('Post to'),
-        centerTitle: false,
-        actions: [
-          TextButton(
-            onPressed: (){}, 
-            child: const Text(
-              'Post',
-              style: TextStyle(
-                color: Colors.blueAccent,
-                fontWeight: FontWeight.bold,
-                fontSize: 16
-              ),
-            ),
-          )
-        ],
+      appBar: _buildAppBar(),
+    );
+  }
 
+  AppBar _buildAppBar() {
+    return AppBar(
+      backgroundColor: mobileBackgroundColor,
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: (){},
       ),
+      title: const Text('Post to'),
+      centerTitle: false,
+      actions: [
+        TextButton(
+          onPressed: (){}, 
+          child: const Text(
+            'Post',
+            style: TextStyle(
+              color: Colors.blueAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 16
+            ),
+          ),
+        )
+      ],
+
     );
   }
 }

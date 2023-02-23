@@ -24,43 +24,44 @@ class _AddPostScreenState extends State<AddPostScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children:[
+            children: [
               const CircleAvatar(
-                backgroundImage: NetworkImage('https://images.unsplash.com/photo-1676030788740-b19c2f441a7f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80'),
-
+                backgroundImage: NetworkImage(
+                    'https://images.unsplash.com/photo-1676030788740-b19c2f441a7f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80'),
               ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.3,
-                child: const TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Write a caption...',
-                    border: InputBorder.none,
-                  ),
-                  maxLines: 8,
-                ),
-              ),
+              _buildInputCaption(context),
               SizedBox(
                 height: 45,
                 width: 45,
                 child: AspectRatio(
-                  aspectRatio: 487/451,
+                  aspectRatio: 487 / 451,
                   child: Container(
                     decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage('https://images.unsplash.com/photo-1676030789552-542678bed8d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80'),
-                        fit: BoxFit.fill,
-                        alignment: FractionalOffset.topCenter
-                      )
-                    ),
-
+                        image: DecorationImage(
+                            image: NetworkImage(
+                                'https://images.unsplash.com/photo-1676030789552-542678bed8d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80'),
+                            fit: BoxFit.fill,
+                            alignment: FractionalOffset.topCenter)),
                   ),
                 ),
               ),
-
               const Divider(),
             ],
           )
         ],
+      ),
+    );
+  }
+
+  Widget _buildInputCaption(BuildContext context) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.3,
+      child: const TextField(
+        decoration: InputDecoration(
+          hintText: 'Write a caption...',
+          border: InputBorder.none,
+        ),
+        maxLines: 8,
       ),
     );
   }
@@ -70,24 +71,22 @@ class _AddPostScreenState extends State<AddPostScreen> {
       backgroundColor: mobileBackgroundColor,
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
-        onPressed: (){},
+        onPressed: () {},
       ),
       title: const Text('Post to'),
       centerTitle: false,
       actions: [
         TextButton(
-          onPressed: (){}, 
+          onPressed: () {},
           child: const Text(
             'Post',
             style: TextStyle(
-              color: Colors.blueAccent,
-              fontWeight: FontWeight.bold,
-              fontSize: 16
-            ),
+                color: Colors.blueAccent,
+                fontWeight: FontWeight.bold,
+                fontSize: 16),
           ),
         )
       ],
-
     );
   }
 }

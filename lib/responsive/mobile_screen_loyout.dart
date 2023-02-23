@@ -53,7 +53,8 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
         onPageChanged: onPageChanged,
-      )
+      ),
+      bottomNavigationBar: ,
     );
   }
 }

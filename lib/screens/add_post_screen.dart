@@ -30,25 +30,29 @@ class _AddPostScreenState extends State<AddPostScreen> {
                     'https://images.unsplash.com/photo-1676030788740-b19c2f441a7f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80'),
               ),
               _buildInputCaption(context),
-              SizedBox(
-                height: 45,
-                width: 45,
-                child: AspectRatio(
-                  aspectRatio: 487 / 451,
-                  child: Container(
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: NetworkImage(
-                                'https://images.unsplash.com/photo-1676030789552-542678bed8d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80'),
-                            fit: BoxFit.fill,
-                            alignment: FractionalOffset.topCenter)),
-                  ),
-                ),
-              ),
+              _buildRightCaption(),
               const Divider(),
             ],
           )
         ],
+      ),
+    );
+  }
+
+  Widget _buildRightCaption() {
+    return SizedBox(
+      height: 45,
+      width: 45,
+      child: AspectRatio(
+        aspectRatio: 487 / 451,
+        child: Container(
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: NetworkImage(
+                      'https://images.unsplash.com/photo-1676030789552-542678bed8d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80'),
+                  fit: BoxFit.fill,
+                  alignment: FractionalOffset.topCenter)),
+        ),
       ),
     );
   }

@@ -74,10 +74,10 @@ class _AddPostScreenState extends State<AddPostScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    /*CircleAvatar(
-                      backgroundImage: NetworkImage(user.photoUrl),
-                    ),*/
-                    _buildLeftCaption(user.photoUrl),
+                    CircleAvatar(
+                      backgroundImage: NetworkImage(user.photoUrl,),
+                    ),
+                    //_buildLeftCaption(user.photoUrl,),
                     _buildInputCaption(context),
                     _buildRightCaption(),
                     const Divider(),

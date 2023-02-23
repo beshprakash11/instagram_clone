@@ -19,7 +19,7 @@ class AddPostScreen extends StatefulWidget {
 class _AddPostScreenState extends State<AddPostScreen> {
   Uint8List? _file;
   final TextEditingController _descriptionController = TextEditingController();
-  void _postImage(
+  void postImage(
     String uuid,
     String username,
     String profImage
@@ -156,7 +156,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
       centerTitle: false,
       actions: [
         TextButton(
-          onPressed: _postImage,
+          onPressed: postImage,
           child: const Text(
             'Post',
             style: TextStyle(

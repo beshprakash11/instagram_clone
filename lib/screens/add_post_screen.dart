@@ -98,7 +98,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
       child: AspectRatio(
         aspectRatio: 487 / 451,
         child: Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
               image: DecorationImage(
                   image: MemoryImage(_file!),
                   fit: BoxFit.fill,

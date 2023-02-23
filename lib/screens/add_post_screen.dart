@@ -10,6 +10,11 @@ class AddPostScreen extends StatefulWidget {
 class _AddPostScreenState extends State<AddPostScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: IconButton(
+        onPressed: (){}, 
+        icon: const Icon(Icons.upload),
+      ),
+    );
   }
 }

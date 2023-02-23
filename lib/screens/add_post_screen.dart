@@ -51,6 +51,13 @@ class _AddPostScreenState extends State<AddPostScreen> {
                     _file = file;
                   });
                 },
+              ),
+              SimpleDialogOption(
+                padding: const EdgeInsets.all(20),
+                child: const Text('Cancel'),
+                onPressed: () async {
+                  Navigator.of(context).pop();
+                },
               )
             ],
           );

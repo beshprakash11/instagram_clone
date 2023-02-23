@@ -10,7 +10,7 @@ import 'package:intl/intl.dart';
 
 import '../provider/user_provider.dart';
 import '../utils/colors.dart';
-import '../utils/dimensions.dart';
+import '../utils/global_variables.dart';
 
 class PostCard extends StatefulWidget {
   final snap;

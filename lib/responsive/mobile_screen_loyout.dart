@@ -42,9 +42,18 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
   Widget build(BuildContext context) {
     model.User user = Provider.of<UserProvider>(context).getUser;
     return Scaffold(
-      body: Center(
-        child:  CommentScreen(),
-      ),
+      body: PageView(
+        children: const [
+          Text('feed'),
+          Text('search'),
+          Text('add post'),
+          Text('notif'), 
+          Text('profile')
+        ],
+        physics: const NeverScrollableScrollPhysics(),
+        controller: pageController,
+        onPageChanged: onPageChanged,
+      )
     );
   }
 }

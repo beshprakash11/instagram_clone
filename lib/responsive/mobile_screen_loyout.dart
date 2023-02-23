@@ -97,6 +97,8 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
             backgroundColor: primaryColor,
           ),
         ],
+        onTap: navigationTapped,
+        currentIndex: _page,
       ),
     );
   }

@@ -35,7 +35,6 @@ class _ResponsvieLayoutState extends State<ResponsvieLayout> {
         if(constraints.maxWidth > webScreenSize){
           //Webscreen
           return widget.webScreenLayout;
-
         }
         //Mobile screen
         return widget.mobileScreenLayout;

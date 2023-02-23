@@ -45,7 +45,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
     model.User user = Provider.of<UserProvider>(context).getUser;
     return Scaffold(
       body: PageView(
-        children: const [
+        children: [
           Text('feed'),
           Text('search'),
           Text('add post'),

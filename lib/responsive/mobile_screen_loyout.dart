@@ -30,15 +30,15 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
     pageController.dispose();
   }
 
-  void onPageChanged(int page){
+  void onPageChanged(int page) {
     setState(() {
       _page = page;
     });
   }
 
-  void navigationTapped(int page){
+  void navigationTapped(int page) {
     pageController.jumpToPage(page);
-  }  
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
           Text('feed'),
           Text('search'),
           Text('add post'),
-          Text('notif'), 
+          Text('notif'),
           Text('profile')
         ],
         physics: const NeverScrollableScrollPhysics(),
@@ -60,9 +60,21 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
         backgroundColor: mobileBackgroundColor,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: (_page == 0 ) ? primaryColor : secondaryColor,)
+              icon: Icon(
+                Icons.home,
+                color: (_page == 0) ? primaryColor : secondaryColor,          
+              ),
+              label: '',
+              backgroundColor: primaryColor
           ),
-
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.search,
+              color: (_page == 1) ? primaryColor : secondaryColor,
+            ),
+            label: '',
+            backgroundColor: primaryColor
+          ),
         ],
       ),
     );

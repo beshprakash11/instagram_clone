@@ -19,7 +19,11 @@ class AddPostScreen extends StatefulWidget {
 class _AddPostScreenState extends State<AddPostScreen> {
   Uint8List? _file;
   final TextEditingController _descriptionController = TextEditingController();
-  void _postImage(){
+  void _postImage(
+    String uuid,
+    String username,
+    String profImage
+  ){
 
   }
   _selectImage(BuildContext context) async {

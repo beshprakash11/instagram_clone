@@ -99,7 +99,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
             ),
           )
         : Scaffold(
-            appBar: _buildAppBar(),
+            appBar: _buildAppBar(user.uid, user.username, user.photoUrl),
             body: Column(
               children: [
                 Row(
@@ -156,7 +156,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
     );
   }
 
-  AppBar _buildAppBar() {
+  AppBar _buildAppBar(String uid, String username, String photoUrl) {
     return AppBar(
       backgroundColor: mobileBackgroundColor,
       leading: IconButton(
@@ -167,7 +167,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
       centerTitle: false,
       actions: [
         TextButton(
-          onPressed: postImage,
+          onPressed: () => postImage(uid, username, photoUrl),
           child: const Text(
             'Post',
             style: TextStyle(

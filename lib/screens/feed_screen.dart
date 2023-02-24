@@ -27,7 +27,7 @@ class FeedScreen extends StatelessWidget {
 
         ],
       ),
-      body: PostCard()
+      body: PostCard(),
     );
   }
 }

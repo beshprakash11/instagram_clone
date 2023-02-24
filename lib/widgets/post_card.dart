@@ -132,6 +132,10 @@ class PostCard extends StatelessWidget {
                           text: 'username',
                           style: const TextStyle(fontWeight: FontWeight.bold,),
                         ),
+                        TextSpan(
+                          text: 'Hey this is description',
+                          style: const TextStyle(fontWeight: FontWeight.bold,),
+                        ),
                       ]
                     )
                   ),

@@ -119,6 +119,24 @@ class PostCard extends StatelessWidget {
                     style: Theme.of(context).textTheme.labelSmall,
                   ),
                 ),
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: RichText(
+                    text: TextSpan(
+                      style: const TextStyle(
+                        color: primaryColor,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: 'username',
+                          style: const TextStyle(fontWeight: FontWeight.bold,),
+                        ),
+                      ]
+                    )
+                  ),
+
+                )
               ],
             ),
           ),

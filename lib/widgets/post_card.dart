@@ -87,7 +87,7 @@ class PostCard extends StatelessWidget {
               ),
               IconButton(
                 onPressed: (){}, 
-                icon: const Icon(Icons.comment_outlined, color: Colors.red,),
+                icon: const Icon(Icons.comment_outlined,),
               ),
             ],
           )

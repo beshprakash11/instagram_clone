@@ -27,7 +27,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
     try {
       
     } catch (err) {
-      
+      print(err.toString());   
     }
 
   }

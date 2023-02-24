@@ -37,6 +37,9 @@ class _AddPostScreenState extends State<AddPostScreen> {
         });
         showSnackBar(context, 'Posted!');
       }else{
+        setState(() {
+          _isLoading = false;
+        });
         showSnackBar(context, res);
       }      
     } catch (err) {

@@ -11,9 +11,23 @@ class FeedScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: mobileBackgroundColor,
         centerTitle: false,
-        title: SvgPicture.asset('assets/ic_instagram.svg', color: primaryColor, height: 32,),
+        title: SvgPicture.asset(
+          'assets/ic_instagram.svg',
+          color: primaryColor,
+          height: 32,
+        ),
+        actions: [
+          IconButton(
+              onPressed: () {}, 
+              icon: const Icon(
+                Icons.messenger_outline
+              )
+          )
+        ],
       ),
-      body: Center(child: Text('Feed screen'),),
+      body: Center(
+        child: Text('Feed screen'),
+      ),
     );
   }
 }

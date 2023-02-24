@@ -83,7 +83,7 @@ class PostCard extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: (){}, 
-                icon: icon
+                icon: const Icon(Icons.favorite, color: Colors.red,),
               ),
             ],
           )

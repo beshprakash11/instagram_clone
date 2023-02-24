@@ -20,6 +20,7 @@ class AddPostScreen extends StatefulWidget {
 class _AddPostScreenState extends State<AddPostScreen> {
   Uint8List? _file;
   final TextEditingController _descriptionController = TextEditingController();
+  bool _isLoading = false;
   void postImage(
     String uuid,
     String username,
@@ -31,12 +32,10 @@ class _AddPostScreenState extends State<AddPostScreen> {
         showSnackBar(context, 'Posted!');
       }else{
         showSnackBar(context, res);
-      }
-      
+      }      
     } catch (err) {
       showSnackBar(context, err.toString());
     }
-
   }
   _selectImage(BuildContext context) async {
     return showDialog(

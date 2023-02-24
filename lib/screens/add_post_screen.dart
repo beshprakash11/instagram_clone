@@ -34,7 +34,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
       }
       
     } catch (err) {
-      print(err.toString());   
+      showSnackBar(context, err.toString());
     }
 
   }

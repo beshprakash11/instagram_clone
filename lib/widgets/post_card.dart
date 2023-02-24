@@ -103,7 +103,23 @@ class PostCard extends StatelessWidget {
                 )
               )
             ],
-          )
+          ),
+
+          //DESCRIPTION AND NUMBER OF COMMENTS
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '1,231 lieks',
+                  style: Theme.of(context).textTheme.labelSmall,
+
+                ),
+              ],
+            ),
+          ),
 
 
         ],

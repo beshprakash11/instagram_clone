@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:instagram_clone/models/users.dart';
 import 'package:instagram_clone/provider/user_provider.dart';
+import 'package:instagram_clone/resources/firestore_methods.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/utils/utils.dart';
 import 'package:provider/provider.dart';
@@ -23,8 +24,9 @@ class _AddPostScreenState extends State<AddPostScreen> {
     String uuid,
     String username,
     String profImage
-  ){
+  ) async{
     try {
+      String res = await FireStoreMethods().uploadPost(_descriptionController.text, _file!, uuid, username, profImage);
       
     } catch (err) {
       print(err.toString());   

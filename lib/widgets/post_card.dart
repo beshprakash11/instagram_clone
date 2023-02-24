@@ -39,7 +39,14 @@ class PostCard extends StatelessWidget {
                   ),
                 ),
                 IconButton(
-                  onPressed: (){}, 
+                  onPressed: (){
+                    showDialog(
+                      context: context, 
+                      builder: (context) => Dialog(
+
+                      )
+                    );
+                  }, 
                   icon: const Icon(Icons.more_vert)
                 )
               ],

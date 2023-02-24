@@ -13,6 +13,11 @@ class PostCard extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16).copyWith(right: 0),
+            child: Row(
+              children: [
+                
+              ],
+            ),
           ),
         ],
       ),

@@ -36,6 +36,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
           _isLoading = false;
         });
         showSnackBar(context, 'Posted!');
+        clearImage();
       }else{
         setState(() {
           _isLoading = false;
@@ -95,6 +96,12 @@ class _AddPostScreenState extends State<AddPostScreen> {
   void dispose() {
     super.dispose();
     _descriptionController.dispose();
+  }
+
+  void clearImage(){
+    setState(() {
+      _file = null;
+    });
   }
   @override
   Widget build(BuildContext context) {

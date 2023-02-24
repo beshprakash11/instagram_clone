@@ -110,7 +110,8 @@ class _AddPostScreenState extends State<AddPostScreen> {
             appBar: _buildAppBar(user.uid, user.username, user.photoUrl),
             body: Column(
               children: [
-                _isLoading ? const LinearProgressIndicator() : Container(),
+                _isLoading ? const LinearProgressIndicator() : const Padding(padding: EdgeInsets.only(top: 0),),
+                const Divider(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,

@@ -15,7 +15,10 @@ class PostCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16).copyWith(right: 0),
             child: Row(
               children: [
-                
+                CircleAvatar(
+                  radius: 16,
+                  backgroundImage: NetworkImage('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'),
+                ),
               ],
             ),
           ),

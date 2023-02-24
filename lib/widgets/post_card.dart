@@ -25,6 +25,14 @@ class PostCard extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'username',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold
+                          ),
+                        )
+                      ],
 
                     ),
 

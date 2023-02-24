@@ -37,6 +37,10 @@ class PostCard extends StatelessWidget {
                     ),
 
                   ),
+                ),
+                IconButton(
+                  onPressed: (){}, 
+                  icon: const Icon(Icons.more_vert)
                 )
               ],
             ),

@@ -4,7 +4,6 @@ import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/provider/user_provider.dart';
 import 'package:instagram_clone/screens/comment_screen.dart';
 import 'package:instagram_clone/utils/global_variables.dart';
-import 'package:instagram_clone/widgets/post_card.dart';
 import 'package:provider/provider.dart';
 import 'package:instagram_clone/models/users.dart' as model;
 

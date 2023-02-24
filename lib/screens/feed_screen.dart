@@ -22,7 +22,8 @@ class FeedScreen extends StatelessWidget {
               icon: const Icon(
                 Icons.messenger_outline
               )
-          )
+          ),
+          
         ],
       ),
       body: Center(

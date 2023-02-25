@@ -14,7 +14,8 @@
 - Error lens for error traces
 
 # Running for different platform
-- web with selection:- flutter run --web-renderer html / flutter build web --release --web-renderer html
+- web with selection:- flutter run --web-renderer html 
+- web:-  flutter build web --release --web-renderer html
 
 
 

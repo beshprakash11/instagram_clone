@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/provider/user_provider.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/widgets/like_animation.dart';
 import 'package:intl/intl.dart';
-
+import 'package:provider/provider.dart';
+import 'package:instagram_clone/models/users.dart' as model;
 class PostCard extends StatelessWidget {
   final snap;
   const PostCard({Key? key, required this.snap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final model.User user = Provider.of<UserProvider>(context).getUser;
     return Container(
       color: mobileBackgroundColor,
       padding: const EdgeInsets.symmetric(vertical: 10),
@@ -84,7 +87,8 @@ class PostCard extends StatelessWidget {
           Row(
             children: [
               LikeAnimation(
-                isAnimating: snap['likes'].contains(),
+                isAnimating: snap['likes'].contains(user.uid),
+                smalllike: true,
                 child: IconButton(
                   onPressed: () {},
                   icon: const Icon(

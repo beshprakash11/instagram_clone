@@ -84,6 +84,14 @@ class PostCard extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
+
+              LikeAnimation(
+                child: const Icon(Icons.favorite, color: Colors.white, size: 100,), 
+                isAnimating: isLikeAnimating,
+                duration: Duration(
+                  milliseconds: 400
+                ),
+              ),
             ],
           ),
 

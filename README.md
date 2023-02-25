@@ -15,6 +15,8 @@
 
 # Running for different platform
 - web:- flutter run -d chrome --web-renderer html
+- web with selection:- flutter run --web-renderer html
+
 
 # Firebase settings up: 6- setting up firebase
 - iOS settings up: 0-7:12 minutes

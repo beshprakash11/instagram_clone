@@ -39,7 +39,9 @@ class FeedScreen extends StatelessWidget {
           }
           
           return ListView.builder(
-            itemBuilder: itemBuilder
+            itemBuilder: (context, index) => Container(
+              child: PostCard(),
+            )
           );
         },
       ),

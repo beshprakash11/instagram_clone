@@ -136,7 +136,13 @@ class _PostCardState extends State<PostCard> {
                 isAnimating: widget.snap['likes'].contains(user.uid),
                 smalllike: true,
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () async{
+                     await FireStoreMethods().likePost(
+                      widget.snap['postId'],
+                      user.uid,
+                      widget.snap['likes']
+                    );
+                  },
                   icon: const Icon(
                     Icons.favorite,
                     color: Colors.red,

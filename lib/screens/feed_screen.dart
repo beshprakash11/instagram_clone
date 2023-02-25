@@ -41,7 +41,9 @@ class FeedScreen extends StatelessWidget {
           return ListView.builder(
             itemCount: snapshot.data!.docs.length,
             itemBuilder: (context, index) => Container(
-              child: PostCard(),
+              child: PostCard(
+                snap: snapshot.data!.docs[index].data(),
+              ),
             )
           );
         },

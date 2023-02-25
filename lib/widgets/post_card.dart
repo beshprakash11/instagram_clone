@@ -163,8 +163,8 @@ class PostCard extends StatelessWidget {
                 ),
                 Container(
                   padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: const Text(
-                    '22/12/2021',
+                  child: Text(
+                    snap['datePublished'],
                     style: TextStyle(fontSize: 16, color: secondaryColor),
                   ),
                 ),

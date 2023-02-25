@@ -74,13 +74,17 @@ class PostCard extends StatelessWidget {
           ),
 
           //IMAGE SECTION
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.35,
-            width: double.infinity,
-            child: Image.network(
-              snap['postUrl'],
-              fit: BoxFit.cover,
-            ),
+          Stack(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.35,
+                width: double.infinity,
+                child: Image.network(
+                  snap['postUrl'],
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
           ),
 
           //LIKE COMMENT SECTION

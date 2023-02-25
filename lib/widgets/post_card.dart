@@ -15,60 +15,7 @@ class PostCard extends StatelessWidget {
       child: Column(
         children: [
           //HEADER SECTION
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16)
-                .copyWith(right: 0),
-            child: Row(
-              children: [
-                CircleAvatar(
-                  radius: 16,
-                  backgroundImage: NetworkImage(snap['profImage']),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 8),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          snap['username'],
-                          style: const TextStyle(fontWeight: FontWeight.bold),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                IconButton(
-                    onPressed: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) => Dialog(
-                          child: ListView(
-                            padding: const EdgeInsets.symmetric(vertical: 16),
-                            shrinkWrap: true,
-                            children: [
-                              'Delete',
-                            ]
-                                .map(
-                                  (e) => InkWell(
-                                    onTap: () {},
-                                    child: Container(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 12, horizontal: 16),
-                                      child: Text(e),
-                                    ),
-                                  ),
-                                )
-                                .toList(),
-                          ),
-                        ),
-                      );
-                    },
-                    icon: const Icon(Icons.more_vert))
-              ],
-            ),
-          ),
+          _buildHeader(context),
 
           //IMAGE SECTION
           SizedBox(
@@ -84,7 +31,7 @@ class PostCard extends StatelessWidget {
           Row(
             children: [
               LikeAnimation(
-                isAnimating: snap['likes'],
+                isAnimating: snap['likes'].contains(),
                 child: IconButton(
                   onPressed: () {},
                   icon: const Icon(
@@ -180,5 +127,62 @@ class PostCard extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget _buildHeader(BuildContext context) {
+    return Container(
+          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16)
+              .copyWith(right: 0),
+          child: Row(
+            children: [
+              CircleAvatar(
+                radius: 16,
+                backgroundImage: NetworkImage(snap['profImage']),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        snap['username'],
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              IconButton(
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => Dialog(
+                        child: ListView(
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          shrinkWrap: true,
+                          children: [
+                            'Delete',
+                          ]
+                              .map(
+                                (e) => InkWell(
+                                  onTap: () {},
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 12, horizontal: 16),
+                                    child: Text(e),
+                                  ),
+                                ),
+                              )
+                              .toList(),
+                        ),
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.more_vert))
+            ],
+          ),
+        );
   }
 }

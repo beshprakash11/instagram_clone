@@ -73,7 +73,7 @@ class PostCard extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.35,
             width: double.infinity,
             child: Image.network(
-              snap['profImage'],
+              snap['postUrl'],
               fit: BoxFit.cover,
             ),
           ),

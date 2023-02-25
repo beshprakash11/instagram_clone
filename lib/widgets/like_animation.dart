@@ -38,6 +38,9 @@ class _LikeAnimationState extends State<LikeAnimation> with SingleTickerProvider
   @override
   void didUpdateWidget(covariant LikeAnimation oldWidget) {
     super.didUpdateWidget(oldWidget);
+    if(widget.isAnimating != oldWidget.isAnimating){
+      startAnimation();
+    }
   }
   @override
   Widget build(BuildContext context) {

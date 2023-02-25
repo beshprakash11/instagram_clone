@@ -10,7 +10,7 @@ class PostCard extends StatelessWidget {
     return Container(
       color: mobileBackgroundColor,
       padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Column(        
+      child: Column(
         children: [
           //HEADER SECTION
           Container(
@@ -66,7 +66,7 @@ class PostCard extends StatelessWidget {
                     },
                     icon: const Icon(Icons.more_vert))
               ],
-            ),            
+            ),
           ),
 
           //IMAGE SECTION
@@ -83,26 +83,32 @@ class PostCard extends StatelessWidget {
           Row(
             children: [
               IconButton(
-                onPressed: (){}, 
-                icon: const Icon(Icons.favorite, color: Colors.red,),
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.favorite,
+                  color: Colors.red,
+                ),
               ),
               IconButton(
-                onPressed: (){}, 
-                icon: const Icon(Icons.comment_outlined,),
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.comment_outlined,
+                ),
               ),
               IconButton(
-                onPressed: (){}, 
-                icon: const Icon(Icons.send, ),
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.send,
+                ),
               ),
               Expanded(
-                child: Align(
-                  alignment: Alignment.bottomRight,
-                  child: IconButton(
-                    icon: const Icon(Icons.bookmark_border),
-                    onPressed: (){},
-                  ),
-                )
-              )
+                  child: Align(
+                alignment: Alignment.bottomRight,
+                child: IconButton(
+                  icon: const Icon(Icons.bookmark_border),
+                  onPressed: () {},
+                ),
+              ))
             ],
           ),
 
@@ -114,7 +120,10 @@ class PostCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DefaultTextStyle(
-                  style: Theme.of(context).textTheme.displaySmall!.copyWith(fontWeight: FontWeight.w800),
+                  style: Theme.of(context)
+                      .textTheme
+                      .displaySmall!
+                      .copyWith(fontWeight: FontWeight.w800),
                   child: Text(
                     '1,231 lieks',
                     style: Theme.of(context).textTheme.labelSmall,
@@ -124,45 +133,40 @@ class PostCard extends StatelessWidget {
                   width: double.infinity,
                   padding: const EdgeInsets.only(top: 8.0),
                   child: RichText(
-                    text: const TextSpan(
-                      style: TextStyle(
-                        color: primaryColor,
-                      ),
-                      children: [
+                      text: const TextSpan(
+                          style: TextStyle(
+                            color: primaryColor,
+                          ),
+                          children: [
                         TextSpan(
                           text: 'username',
-                          style: TextStyle(fontWeight: FontWeight.bold,),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                         TextSpan(
                           text: '  Hey this is description',
-                          style: TextStyle(fontWeight: FontWeight.bold,),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ]
-                    )
-                  ),
-
+                      ])),
                 ),
                 InkWell(
-                  onTap: (){},
+                  onTap: () {},
                   child: Container(
-                    padding:const EdgeInsets.symmetric(vertical: 4),
+                    padding: const EdgeInsets.symmetric(vertical: 4),
                     child: const Text(
                       'View all 200 comments',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: secondaryColor
-                      ),
+                      style: TextStyle(fontSize: 16, color: secondaryColor),
                     ),
                   ),
                 ),
                 Container(
-                  padding:const EdgeInsets.symmetric(vertical: 4),
+                  padding: const EdgeInsets.symmetric(vertical: 4),
                   child: const Text(
                     '22/12/2021',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: secondaryColor
-                    ),
+                    style: TextStyle(fontSize: 16, color: secondaryColor),
                   ),
                 ),
               ],

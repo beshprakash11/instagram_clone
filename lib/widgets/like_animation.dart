@@ -21,6 +21,7 @@ class LikeAnimation extends StatefulWidget {
 
 class _LikeAnimationState extends State<LikeAnimation> with SingleTickerProviderStateMixin{
   late AnimationController controller;
+  late Animation<double> scale;
 
   @override
   void initState() {
@@ -30,6 +31,7 @@ class _LikeAnimationState extends State<LikeAnimation> with SingleTickerProvider
       // divide provided miliseconds by 2 and convert it to integer
       duration: Duration(microseconds: widget.duration.inMilliseconds ~/ 2),
     );
+    scale = Tween<double>(begin: 1, end: 1.2).animate(controller);
 
   }
   @override

@@ -42,6 +42,12 @@ class _LikeAnimationState extends State<LikeAnimation> with SingleTickerProvider
       startAnimation();
     }
   }
+  
+  startAnimation() async{
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Container(

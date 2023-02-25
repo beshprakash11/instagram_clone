@@ -124,7 +124,7 @@ class PostCard extends StatelessWidget {
                       .displaySmall!
                       .copyWith(fontWeight: FontWeight.w800),
                   child: Text(
-                    '1,231 lieks',
+                    '${snap['likes'].length} likes.',
                     style: Theme.of(context).textTheme.labelSmall,
                   ),
                 ),

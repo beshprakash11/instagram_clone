@@ -82,9 +82,10 @@ class _PostCardState extends State<PostCard> {
           //IMAGE SECTION
           GestureDetector(
             onDoubleTap: (){
-              
+              isLikeAnimating = true;              
             },
             child: Stack(
+              alignment: Alignment.center,
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.35,

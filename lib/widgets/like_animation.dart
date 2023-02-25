@@ -25,7 +25,12 @@ class _LikeAnimationState extends State<LikeAnimation> with SingleTickerProvider
   @override
   void initState() {
     super.initState();
-    controller = AnimationController(vsync: this, duration: Duration(microseconds: ));
+    controller = AnimationController(
+      vsync: this, 
+      // divide provided miliseconds by 2 and convert it to integer
+      duration: Duration(microseconds: widget.duration.inMilliseconds ~/ 2),
+    );
+
   }
   @override
   Widget build(BuildContext context) {

@@ -138,13 +138,13 @@ class PostCard extends StatelessWidget {
                           ),
                           children: [
                         TextSpan(
-                          text: snap['username'],
+                          text: '${snap['username']}:- ',
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         TextSpan(
-                          text: '  ${snap['description']}',
+                          text: ' ${snap['description']}',
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                           ),

@@ -96,9 +96,13 @@ class _PostCardState extends State<PostCard> {
                 ),
           
                 LikeAnimation(
-                  child: const Icon(Icons.favorite, color: Colors.white, size: 100,), 
+                  child: const Icon(
+                    Icons.favorite, 
+                    color: Colors.white, 
+                    size: 100,
+                  ), 
                   isAnimating: isLikeAnimating,
-                  duration: Duration(
+                  duration: const Duration(
                     milliseconds: 400
                   ),
                   onEnd: (){

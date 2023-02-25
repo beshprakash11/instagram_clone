@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 
 class LikeAnimation extends StatefulWidget {
   final Widget child;
-  const LikeAnimation({Key? key, required this.child,}) : super(key: key);
+  final bool isAnimating;
+  final Duration duration;
+  final VoidCallback? onEnd;
+  final bool smalllike;
+  const LikeAnimation({
+    Key? key, 
+    required this.child,
+  }) : super(key: key);
 
   @override
   State<LikeAnimation> createState() => _LikeAnimationState();

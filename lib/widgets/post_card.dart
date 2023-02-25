@@ -82,7 +82,10 @@ class _PostCardState extends State<PostCard> {
           //IMAGE SECTION
           GestureDetector(
             onDoubleTap: (){
-              isLikeAnimating = true;              
+              setState(() {
+                isLikeAnimating = true;   
+              });
+                         
             },
             child: Stack(
               alignment: Alignment.center,
@@ -110,7 +113,9 @@ class _PostCardState extends State<PostCard> {
                       milliseconds: 400
                     ),
                     onEnd: (){
-                      isLikeAnimating = false;
+                      setState(() {
+                        isLikeAnimating = false;
+                      });
                     },
                   ),
                 ),

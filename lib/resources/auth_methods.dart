@@ -46,7 +46,7 @@ class AuthMethods {
             .uploadImageToStorage('profilePics', file, false);
 
         //add user to our database
-        model.User user = model.User(
+        model.User _user = model.User(
             email: email,
             uid: cred.user!.uid,
             photoUrl: photoURL,
@@ -56,8 +56,9 @@ class AuthMethods {
             following: []
           );
 
-        _firestore.collection('users').doc(cred.user!.uid).set(
-              user.toJson(),
+        //adding user in our database
+        await _firestore.collection('users').doc(cred.user!.uid).set(
+              _user.toJson(),
             );
         res = "success";
       }

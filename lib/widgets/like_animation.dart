@@ -9,6 +9,10 @@ class LikeAnimation extends StatefulWidget {
   const LikeAnimation({
     Key? key, 
     required this.child,
+    required this.isAnimating,
+    this.duration = const Duration(microseconds: 150),
+    this.onEnd,
+    this.smalllike = false
   }) : super(key: key);
 
   @override

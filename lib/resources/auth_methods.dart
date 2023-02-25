@@ -14,10 +14,11 @@ class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  Future<model.User> getUsersDetails() async{
+  Future<model.User> getUsersDetails() async {
     User currentUser = _auth.currentUser!;
 
-    DocumentSnapshot snap = await _firestore.collection('users').doc(currentUser.uid).get();
+    DocumentSnapshot snap =
+        await _firestore.collection('users').doc(currentUser.uid).get();
 
     return model.User.fromSnap(snap);
   }
@@ -35,8 +36,7 @@ class AuthMethods {
           password.isNotEmpty ||
           username.isNotEmpty ||
           bio.isNotEmpty ||
-          file != null
-        ) {
+          file != null) {
         // register users
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
@@ -53,8 +53,7 @@ class AuthMethods {
             username: username,
             bio: bio,
             followers: [],
-            following: []
-          );
+            following: []);
 
         //adding user in our database
         await _firestore.collection('users').doc(cred.user!.uid).set(
@@ -98,5 +97,9 @@ class AuthMethods {
     }
 
     return res;
+  }
+
+  Future<void> signOut() async {
+    await _auth.signOut();
   }
 }

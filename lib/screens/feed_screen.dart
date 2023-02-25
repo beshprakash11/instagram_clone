@@ -38,6 +38,9 @@ class FeedScreen extends StatelessWidget {
             );
           }
           
+          return ListView.builder(
+            itemBuilder: itemBuilder
+          );
         },
       ),
     );

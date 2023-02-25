@@ -34,8 +34,8 @@ class FireStoreMethods {
   }
 
   Future<String> likePost(String postId, String uid, List likes) async {
-    try {
-      String res = "Some error occurred";
+    String res = "Some error occurred";
+    try {      
       if (likes.contains(uid)) {
         // if the likes list contains the user uid, we need to remove it
         _firestore.collection('posts').doc(postId).update({
@@ -48,8 +48,9 @@ class FireStoreMethods {
         });
       }
       res = 'success';
-    } catch (e) {
-      print(e.toString());     
+    } catch (err) {
+      res = err.toString();   
     }
+    return res;
   }
 }

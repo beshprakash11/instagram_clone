@@ -97,10 +97,10 @@ class _PostCardState extends State<PostCard> {
                 ),
           
                 LikeAnimation(
-                  child: const Icon(
+                  child: Icon(
                     Icons.favorite, 
                     color: Colors.white, 
-                    size: 100,
+                    size: 120,
                   ), 
                   isAnimating: isLikeAnimating,
                   duration: const Duration(

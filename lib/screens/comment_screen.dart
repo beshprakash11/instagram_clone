@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/models/users.dart';
 import 'package:instagram_clone/provider/user_provider.dart';
+import 'package:instagram_clone/resources/firestore_methods.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/widgets/comment_card.dart';
 import 'package:provider/provider.dart';
 
 class CommentScreen extends StatefulWidget {
-  const CommentScreen({super.key});
+  final snap;
+  const CommentScreen({
+    Key? key, 
+    required this.snap
+  }) : super(key: key);
 
   @override
   State<CommentScreen> createState() => _CommentScreenState();
@@ -18,7 +23,7 @@ class _CommentScreenState extends State<CommentScreen> {
     final User user = Provider.of<UserProvider>(context).getUser;
     return Scaffold(
       appBar: _buildAppBar(),
-      bottomNavigationBar: _buildBottomNavbar(context, user.photoUrl, user.username),
+      bottomNavigationBar: _buildBottomNavbar(context, user.photoUrl, user.username, user.uid),
       body: CommentCard(),
     );
   }
@@ -31,7 +36,7 @@ class _CommentScreenState extends State<CommentScreen> {
     );
   }
 
-  Widget _buildBottomNavbar(BuildContext context, String photoUrl, String username) {
+  Widget _buildBottomNavbar(BuildContext context, String photoUrl, String username, userId) {
     return SafeArea(
       child: Container(
         height: kToolbarHeight,
@@ -42,16 +47,24 @@ class _CommentScreenState extends State<CommentScreen> {
           children: [
             _buildCircularAvatar(photoUrl),
             _buildCommentUser(username),
-            _buildPostBtn()
+            _buildPostBtn(userId, username, photoUrl)
           ],
         ),
       ),
     );
   }
 
-  Widget _buildPostBtn() {
+  Widget _buildPostBtn(String userId, String username, String photoUrl) {
     return InkWell(
-      onTap: () {},
+      onTap: () async{
+        FireStoreMethods().postComment(
+          widget.snap['postId'], 
+          widget.snap['text'], 
+          userId, 
+          username, 
+          photoUrl
+        );
+      },
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
         child: const Text('Post', style: TextStyle(color: blueColor)),

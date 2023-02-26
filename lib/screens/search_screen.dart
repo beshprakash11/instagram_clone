@@ -22,10 +22,13 @@ class _SearchScreenState extends State<SearchScreen> {
       appBar: AppBar(
         backgroundColor: mobileBackgroundColor,
         title: TextFormField(
+          controller: searchController,
           decoration: const InputDecoration(
             labelText: 'Search for a user'
           ),
-
+          onFieldSubmitted: (String _){
+            
+          },
         ),
       ),
     );

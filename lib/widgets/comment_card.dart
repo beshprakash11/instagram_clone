@@ -38,11 +38,11 @@ class _CommentCardState extends State<CommentCard> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RichText(
-                text: const TextSpan(
+                text: TextSpan(
               children: [
                 TextSpan(
-                    text: 'username',
-                    style: TextStyle(
+                    text: '${widget.snap['username']}:- ',
+                    style: const TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.white)),
                 TextSpan(
                     text: 'Some description to insert',

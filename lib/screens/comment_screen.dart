@@ -35,6 +35,7 @@ class _CommentScreenState extends State<CommentScreen> {
         .collection('posts')
         .doc(widget.snap['postId'])
         .collection('comments')
+        .orderBy('datePublished', descending: true)
         .snapshots(),
         builder: (context, snapshot){
           if(snapshot.connectionState == ConnectionState.waiting)  {

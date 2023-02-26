@@ -57,7 +57,7 @@ class _CommentScreenState extends State<CommentScreen> {
   Widget _buildPostBtn(String userId, String username, String photoUrl) {
     return InkWell(
       onTap: () async{
-        FireStoreMethods().postComment(
+        await FireStoreMethods().postComment(
           widget.snap['postId'], 
           widget.snap['text'], 
           userId, 

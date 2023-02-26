@@ -67,7 +67,7 @@ class _CommentScreenState extends State<CommentScreen> {
           ),
         ),
       ),
-      body: CommentCard(),
+      body: const CommentCard(),
     );
   }
 

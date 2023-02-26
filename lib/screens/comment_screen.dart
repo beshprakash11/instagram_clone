@@ -68,24 +68,6 @@ class _CommentScreenState extends State<CommentScreen> {
     );
   }
 
-  Widget _buildBottomNavbar(
-      BuildContext context, String photoUrl, String username, userId) {
-    return SafeArea(
-      child: Container(
-        height: kToolbarHeight,
-        margin:
-            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-        padding: const EdgeInsets.only(left: 16, right: 8),
-        child: Row(
-          children: [
-            _buildCircularAvatar(photoUrl),
-            _buildCommentUser(username),
-            _buildPostBtn(userId, username, photoUrl)
-          ],
-        ),
-      ),
-    );
-  }
 
   Widget _buildPostBtn(String userId, String username, String photoUrl) {
     return InkWell(

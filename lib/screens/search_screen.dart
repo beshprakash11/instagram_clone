@@ -43,6 +43,10 @@ class _SearchScreenState extends State<SearchScreen> {
           if(!snapshot.hasData){
             return const Center(child: CircularProgressIndicator());
           }
+          return ListView.builder(
+            itemCount: ,
+            itemBuilder: itemBuilder
+          );
         },
       ),
     );

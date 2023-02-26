@@ -66,7 +66,7 @@ class _CommentScreenState extends State<CommentScreen> {
       onTap: () async{
         await FireStoreMethods().postComment(
           widget.snap['postId'], 
-          widget.snap['text'], 
+          _commentController.text, 
           userId, 
           username, 
           photoUrl

@@ -47,7 +47,12 @@ class _SearchScreenState extends State<SearchScreen> {
             itemCount: (snapshot.data! as dynamic).docs.length,
             itemBuilder: (context, index){
               return ListTile(
-                
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                    (snapshot.data! as dynamic).docs[index]
+                  ),
+                ),
+
               );
             }
           );

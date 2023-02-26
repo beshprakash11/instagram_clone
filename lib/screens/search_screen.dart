@@ -43,6 +43,9 @@ class _SearchScreenState extends State<SearchScreen> {
               child: CircularProgressIndicator(),
             );
           }
+          return ListView.builder(
+            itemBuilder: itemBuilder
+          );
         }
       ),
     );

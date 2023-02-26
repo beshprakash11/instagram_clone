@@ -87,6 +87,9 @@ class _CommentScreenState extends State<CommentScreen> {
                     user.username, 
                     user.photoUrl
                   );
+                  setState(() {
+                    _commentController.text = "";
+                  });
               },
               child: Container(
                 padding:

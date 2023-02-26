@@ -49,9 +49,11 @@ class _SearchScreenState extends State<SearchScreen> {
               return ListTile(
                 leading: CircleAvatar(
                   backgroundImage: NetworkImage(
-                    (snapshot.data! as dynamic).docs[index]
+                    (snapshot.data! as dynamic).docs[index]['photoUrl']
                   ),
                 ),
+
+                title: Text((snapshot.data! as dynamic).docs[index]['username']),
 
               );
             }

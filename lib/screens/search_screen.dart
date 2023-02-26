@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/utils/colors.dart';
 
@@ -27,9 +28,13 @@ class _SearchScreenState extends State<SearchScreen> {
             labelText: 'Search for a user'
           ),
           onFieldSubmitted: (String _){
-            
+            print(_);
           },
         ),
+      ),
+      body: FutureBuilder(
+        future: FirebaseFirestore.instance.collection('users').get(),
+        builder: builder
       ),
     );
   }

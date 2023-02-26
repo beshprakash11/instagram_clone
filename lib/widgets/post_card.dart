@@ -17,6 +17,7 @@ class PostCard extends StatefulWidget {
 
 class _PostCardState extends State<PostCard> {
   bool isLikeAnimating = false;
+  int commentLen = 0;
 
   @override
   void initState() {
@@ -24,8 +25,8 @@ class _PostCardState extends State<PostCard> {
     getComments();
   }
 
-  void getComments(){
-    
+  void getComments() async{
+
   }
   @override
   Widget build(BuildContext context) {

@@ -84,4 +84,8 @@ class FireStoreMethods {
     }
     return res;
   }
+
+   // Delete Post
+  Future<String> deletePost(String postId) async {
+  }
 }

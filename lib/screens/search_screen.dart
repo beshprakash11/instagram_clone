@@ -40,7 +40,9 @@ class _SearchScreenState extends State<SearchScreen> {
         .collection('posts')
         .get(),
         builder: (context, snapshot){
-
+          if(!snapshot.hasData){
+            return const Center(child: CircularProgressIndicator());
+          }
         },
       ),
     );

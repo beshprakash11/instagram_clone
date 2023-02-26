@@ -59,13 +59,13 @@ class _CommentScreenState extends State<CommentScreen> {
     );
   }
 
-  Widget _buildCommentUser() {
+  Widget _buildCommentUser(String username) {
     return const Expanded(
       child: Padding(
         padding: EdgeInsets.only(left: 16, right: 8.0),
         child: TextField(
           decoration: InputDecoration(
-              hintText: 'Comment as username', border: InputBorder.none),
+              hintText: 'Comment as ${username}', border: InputBorder.none),
         ),
       ),
     );

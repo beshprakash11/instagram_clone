@@ -28,51 +28,58 @@ class _CommentScreenState extends State<CommentScreen> {
     final User user = Provider.of<UserProvider>(context).getUser;
     return Scaffold(
       appBar: _buildAppBar(),
-      bottomNavigationBar: SafeArea(
-        child: Container(
-          height: kToolbarHeight,
-          margin:
-              EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-          padding: const EdgeInsets.only(left: 16, right: 8),
-          child: Row(
-            children: [
-              //User Profile picture
-              CircleAvatar(
-                backgroundImage: NetworkImage(user.photoUrl),
-                radius: 18,
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 8.0),
-                  child: TextField(
-                    controller: _commentController,
-                    decoration: InputDecoration(
-                        hintText: 'Comment as ${user.username}',
-                        border: InputBorder.none),
-                  ),
+      body: StreamBuilder(
+        builder: builder
+      ),
+      //Bottom Navigation bar
+      bottomNavigationBar: _buildNavigationBar(context, user),
+    );
+  }
+
+  SafeArea _buildNavigationBar(BuildContext context, User user) {
+    return SafeArea(
+      child: Container(
+        height: kToolbarHeight,
+        margin:
+            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        padding: const EdgeInsets.only(left: 16, right: 8),
+        child: Row(
+          children: [
+            //User Profile picture
+            CircleAvatar(
+              backgroundImage: NetworkImage(user.photoUrl),
+              radius: 18,
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 16, right: 8.0),
+                child: TextField(
+                  controller: _commentController,
+                  decoration: InputDecoration(
+                      hintText: 'Comment as ${user.username}',
+                      border: InputBorder.none),
                 ),
               ),
-              InkWell(
-                onTap: () async {
-                  await FireStoreMethods().postComment(
-                    widget.snap['postId'],
-                      _commentController.text, 
-                      user.uid, 
-                      user.username, 
-                      user.photoUrl
-                    );
-                },
-                child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-                  child: const Text('Post', style: TextStyle(color: blueColor)),
-                ),
-              )
-            ],
-          ),
+            ),
+            InkWell(
+              onTap: () async {
+                await FireStoreMethods().postComment(
+                  widget.snap['postId'],
+                    _commentController.text, 
+                    user.uid, 
+                    user.username, 
+                    user.photoUrl
+                  );
+              },
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                child: const Text('Post', style: TextStyle(color: blueColor)),
+              ),
+            )
+          ],
         ),
       ),
-      body: const CommentCard(),
     );
   }
 

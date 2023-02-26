@@ -35,7 +35,7 @@ class _SearchScreenState extends State<SearchScreen> {
           },
         ),
       ),
-      body: FutureBuilder(
+      body: isShowUser ? FutureBuilder(
         future: FirebaseFirestore.instance
         .collection('users')
         .where('usernme', isGreaterThanOrEqualTo: searchController.text)
@@ -62,7 +62,7 @@ class _SearchScreenState extends State<SearchScreen> {
             }
           );
         }
-      ),
+      ) : Text('Posts'),
     );
   }
 }

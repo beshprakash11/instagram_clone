@@ -36,7 +36,13 @@ class _CommentScreenState extends State<CommentScreen> {
         .doc(widget.snap['postId'])
         .collection('comments')
         .snapshots(),
-        builder: builder
+        builder: (context, snapshot){
+          if(snapshot.connectionState == ConnectionState.waiting)  {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }        
+        },
       ),
       //Bottom Navigation bar
       bottomNavigationBar: _buildNavigationBar(context, user),

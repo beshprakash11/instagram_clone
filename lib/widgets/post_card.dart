@@ -92,6 +92,7 @@ class _PostCardState extends State<PostCard> {
                                   (e) => InkWell(
                                     onTap: () async{
                                       FireStoreMethods().deletePost(widget.snap['postId']);
+                                      Navigator.of(context).pop();
                                     },
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(

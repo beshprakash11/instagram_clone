@@ -41,7 +41,10 @@ class _CommentScreenState extends State<CommentScreen> {
             return const Center(
               child: CircularProgressIndicator(),
             );
-          }        
+          }  
+          return ListView.builder(
+            itemBuilder: itemBuilder
+          );     
         },
       ),
       //Bottom Navigation bar

@@ -37,7 +37,7 @@ class _PostCardState extends State<PostCard> {
           .get();
 
       commentLen = snap.docs.length;
-    } on Exception catch (err) {
+    } catch (err) {
       showSnackBar(context, err.toString());
     }
   }

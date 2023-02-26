@@ -4,6 +4,7 @@ import 'package:instagram_clone/provider/user_provider.dart';
 import 'package:instagram_clone/resources/firestore_methods.dart';
 import 'package:instagram_clone/screens/comment_screen.dart';
 import 'package:instagram_clone/utils/colors.dart';
+import 'package:instagram_clone/utils/utils.dart';
 import 'package:instagram_clone/widgets/like_animation.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -37,7 +38,7 @@ class _PostCardState extends State<PostCard> {
 
       commentLen = snap.docs.length;
     } on Exception catch (err) {
-      print(err.toString());
+      showSnackBar(context, err.toString());
     }
   }
 

@@ -80,7 +80,6 @@ class FireStoreMethods {
       }
     } catch (err) {
       res = err.toString();
-      print(err.toString());
     }
     return res;
   }

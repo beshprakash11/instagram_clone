@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/models/users.dart';
 import 'package:instagram_clone/provider/user_provider.dart';
@@ -29,6 +31,11 @@ class _CommentScreenState extends State<CommentScreen> {
     return Scaffold(
       appBar: _buildAppBar(),
       body: StreamBuilder(
+        stream: FirebaseFirestore.instance
+        .collection('posts')
+        .doc(widget.snap['postId'])
+        .collection('comments')
+        .snapshots(),
         builder: builder
       ),
       //Bottom Navigation bar

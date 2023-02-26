@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/provider/user_provider.dart';
 import 'package:instagram_clone/resources/firestore_methods.dart';
@@ -26,7 +27,10 @@ class _PostCardState extends State<PostCard> {
   }
 
   void getComments() async{
-
+    await FirebaseFirestore.instance.
+      collection('posts')
+      .doc(widget.snap['postId'])
+      .get();
   }
   @override
   Widget build(BuildContext context) {

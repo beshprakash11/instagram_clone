@@ -35,7 +35,7 @@ class _SearchScreenState extends State<SearchScreen> {
       body: FutureBuilder(
         future: FirebaseFirestore.instance
         .collection('users')
-        .where('usernme')
+        .where('usernme', isGreaterThanOrEqualTo: searchController.text)
         .get(),
         builder: builder
       ),

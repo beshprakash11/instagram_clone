@@ -37,7 +37,13 @@ class _SearchScreenState extends State<SearchScreen> {
         .collection('users')
         .where('usernme', isGreaterThanOrEqualTo: searchController.text)
         .get(),
-        builder: builder
+        builder: (context, snapshot){
+          if(!snapshot.hasData){
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        }
       ),
     );
   }

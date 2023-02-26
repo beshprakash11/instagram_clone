@@ -76,11 +76,13 @@ class FireStoreMethods {
           'datePublished': DateTime.now(),
         });
         res = 'success';
+        print(res);
       } else {
         res = "Please enter text";
       }
     } catch (err) {
       res = err.toString();
+      print(res);
     }
     return res;
   }

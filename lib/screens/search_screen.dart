@@ -36,24 +36,34 @@ class _SearchScreenState extends State<SearchScreen> {
           },
         ),
       ),
-      body: isShowUser ? _buildUserNameImage() : FutureBuilder(
-        future: FirebaseFirestore.instance
-        .collection('posts')
-        .get(),
-        builder: (context, snapshot){
-          if(!snapshot.hasData){
-            return const Center(child: CircularProgressIndicator(),);
-          }
-          return StaggeredGridView.countBuilder(
-            crossAxisCount: 3,
-            itemCount: (snapshot.data! as dynamic).docs.length,
-            itemBuilder: (context, index) => Image.network(
-              (snapshot.data! as dynamic).docs['index']['postUrl']
-            ),   
-            staggeredTileBuilder: (index) => StaggeredTile.count((index % 7 == 0) ? 2:1, (index % 7 == 0) ? 2:1),
-          );
-        },
-      ),
+      body: isShowUser ? _buildUserNameImage() : _buildPostData(),
+    );
+  }
+
+  FutureBuilder<QuerySnapshot<Map<String, dynamic>>> _buildPostData() {
+    return FutureBuilder(
+      future: FirebaseFirestore.instance
+      .collection('posts')
+      .get(),
+      builder: (context, snapshot){
+        if(!snapshot.hasData){
+          return const Center(child: CircularProgressIndicator(),);
+        }
+        return StaggeredGridView.countBuilder(
+          crossAxisCount: 3,
+          itemCount: (snapshot.data! as dynamic).docs.length,
+          itemBuilder: (context, index) => Image.network(
+            (snapshot.data! as dynamic).docs['index']['postUrl'],
+            fit: BoxFit.cover,
+          ),   
+          staggeredTileBuilder: (index) => StaggeredTile.count(
+            (index % 7 == 0) ? 2:1, 
+            (index % 7 == 0) ? 2:1
+          ),
+          mainAxisSpacing: 8,
+          crossAxisSpacing: 8,
+        );
+      },
     );
   }
 

@@ -33,7 +33,10 @@ class _SearchScreenState extends State<SearchScreen> {
         ),
       ),
       body: FutureBuilder(
-        future: FirebaseFirestore.instance.collection('users').get(),
+        future: FirebaseFirestore.instance
+        .collection('users')
+        .where('usernme')
+        .get(),
         builder: builder
       ),
     );

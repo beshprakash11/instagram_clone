@@ -84,6 +84,7 @@ class _CommentScreenState extends State<CommentScreen> {
       child: Padding(
         padding: const EdgeInsets.only(left: 16, right: 8.0),
         child: TextField(
+          controller: _commentController,
           decoration: InputDecoration(
               hintText: 'Comment as ${username}', border: InputBorder.none),
         ),

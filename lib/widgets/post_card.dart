@@ -242,9 +242,9 @@ class _PostCardState extends State<PostCard> {
                   onTap: () {},
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 4),
-                    child: const Text(
-                      'View all 200 comments',
-                      style: TextStyle(fontSize: 16, color: secondaryColor),
+                    child: Text(
+                      'View all $commentLen comments',
+                      style: const TextStyle(fontSize: 16, color: secondaryColor),
                     ),
                   ),
                 ),

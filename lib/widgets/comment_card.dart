@@ -41,12 +41,12 @@ class _CommentCardState extends State<CommentCard> {
                 text: TextSpan(
               children: [
                 TextSpan(
-                    text: '${widget.snap['username']}:- ',
+                    text: '${widget.snap['name']}:- ',
                     style: const TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.white)),
                 TextSpan(
                     text: 'Some description to insert',
-                    style: TextStyle(color: Colors.white))
+                    style: const TextStyle(color: Colors.white))
               ],
             )),
             _buildDate()

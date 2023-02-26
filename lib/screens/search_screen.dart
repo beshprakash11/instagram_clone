@@ -35,7 +35,14 @@ class _SearchScreenState extends State<SearchScreen> {
           },
         ),
       ),
-      body: isShowUser ? _buildUserNameImage() : Text('Posts'),
+      body: isShowUser ? _buildUserNameImage() : FutureBuilder(
+        future: FirebaseFirestore.instance
+        .collection('posts')
+        .get(),
+        builder: (context, snapshot){
+
+        },
+      ),
     );
   }
 

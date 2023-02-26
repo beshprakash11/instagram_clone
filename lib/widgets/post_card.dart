@@ -17,6 +17,16 @@ class PostCard extends StatefulWidget {
 
 class _PostCardState extends State<PostCard> {
   bool isLikeAnimating = false;
+
+  @override
+  void initState() {
+    super.initState();
+    getComments();
+  }
+
+  void getComments(){
+    
+  }
   @override
   Widget build(BuildContext context) {
     final model.User user = Provider.of<UserProvider>(context).getUser;

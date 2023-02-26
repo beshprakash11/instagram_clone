@@ -8,6 +8,7 @@ import 'package:instagram_clone/widgets/like_animation.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:instagram_clone/models/users.dart' as model;
+
 class PostCard extends StatefulWidget {
   final snap;
   const PostCard({Key? key, required this.snap}) : super(key: key);
@@ -26,12 +27,20 @@ class _PostCardState extends State<PostCard> {
     getComments();
   }
 
-  void getComments() async{
-    await FirebaseFirestore.instance.
-      collection('posts')
-      .doc(widget.snap['postId'])
-      .get();
+  void getComments() async {
+    try {
+      QuerySnapshot snap = await FirebaseFirestore.instance
+          .collection('posts')
+          .doc(widget.snap['postId'])
+          .collection('comments')
+          .get();
+
+      commentLen = snap.docs.length;
+    } on Exception catch (err) {
+      print(err.toString());
+    }
   }
+
   @override
   Widget build(BuildContext context) {
     final model.User user = Provider.of<UserProvider>(context).getUser;
@@ -98,16 +107,12 @@ class _PostCardState extends State<PostCard> {
 
           //IMAGE SECTION
           GestureDetector(
-            onDoubleTap: () async{
+            onDoubleTap: () async {
               await FireStoreMethods().likePost(
-                widget.snap['postId'],
-                user.uid,
-                widget.snap['likes']
-              );
+                  widget.snap['postId'], user.uid, widget.snap['likes']);
               setState(() {
-                isLikeAnimating = true;   
+                isLikeAnimating = true;
               });
-                         
             },
             child: Stack(
               alignment: Alignment.center,
@@ -120,21 +125,18 @@ class _PostCardState extends State<PostCard> {
                     fit: BoxFit.cover,
                   ),
                 ),
-          
                 AnimatedOpacity(
                   duration: const Duration(milliseconds: 200),
                   opacity: isLikeAnimating ? 1 : 0,
                   child: LikeAnimation(
                     child: Icon(
-                      Icons.favorite, 
-                      color: Colors.white, 
+                      Icons.favorite,
+                      color: Colors.white,
                       size: 120,
-                    ), 
-                    isAnimating: isLikeAnimating,
-                    duration: const Duration(
-                      milliseconds: 400
                     ),
-                    onEnd: (){
+                    isAnimating: isLikeAnimating,
+                    duration: const Duration(milliseconds: 400),
+                    onEnd: () {
                       setState(() {
                         isLikeAnimating = false;
                       });
@@ -152,17 +154,18 @@ class _PostCardState extends State<PostCard> {
                 isAnimating: widget.snap['likes'].contains(user.uid),
                 smalllike: true,
                 child: IconButton(
-                  onPressed: () async{
-                     await FireStoreMethods().likePost(
-                      widget.snap['postId'],
-                      user.uid,
-                      widget.snap['likes']
-                    );
+                  onPressed: () async {
+                    await FireStoreMethods().likePost(
+                        widget.snap['postId'], user.uid, widget.snap['likes']);
                   },
-                  icon:  widget.snap['likes'].contains(user.uid) ? const Icon(
-                    Icons.favorite,
-                    color: Colors.red,
-                  ) : const Icon(Icons.favorite_border, ),
+                  icon: widget.snap['likes'].contains(user.uid)
+                      ? const Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                        )
+                      : const Icon(
+                          Icons.favorite_border,
+                        ),
                 ),
               ),
               IconButton(
@@ -248,7 +251,8 @@ class _PostCardState extends State<PostCard> {
                   padding: const EdgeInsets.symmetric(vertical: 4),
                   child: Text(
                     DateFormat.yMMMd().format(
-                    widget.snap['datePublished'].toDate(),),
+                      widget.snap['datePublished'].toDate(),
+                    ),
                     style: const TextStyle(fontSize: 16, color: secondaryColor),
                   ),
                 ),

@@ -34,6 +34,26 @@ class _CommentScreenState extends State<CommentScreen> {
           margin:
               EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
           padding: const EdgeInsets.only(left: 16, right: 8),
+          child: Row(
+            children: [
+              //User Profile picture
+              CircleAvatar(
+                backgroundImage: NetworkImage(user.photoUrl),
+                radius: 18,
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 16, right: 8.0),
+                  child: TextField(
+                    controller: _commentController,
+                    decoration: InputDecoration(
+                        hintText: 'Comment as ${user.username}',
+                        border: InputBorder.none),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
       body: CommentCard(),
@@ -77,26 +97,6 @@ class _CommentScreenState extends State<CommentScreen> {
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
         child: const Text('Post', style: TextStyle(color: blueColor)),
       ),
-    );
-  }
-
-  Widget _buildCommentUser(String username) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.only(left: 16, right: 8.0),
-        child: TextField(
-          controller: _commentController,
-          decoration: InputDecoration(
-              hintText: 'Comment as ${username}', border: InputBorder.none),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCircularAvatar(String photoUrl) {
-    return CircleAvatar(
-      backgroundImage: NetworkImage(photoUrl),
-      radius: 18,
     );
   }
 }

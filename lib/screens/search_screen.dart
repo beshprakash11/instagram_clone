@@ -44,7 +44,9 @@ class _SearchScreenState extends State<SearchScreen> {
           if(!snapshot.hasData){
             return const Center(child: CircularProgressIndicator(),);
           }
-          return StaggeredGrid.count(
+          return StaggeredGridView.count(
+            crossAxisCount: 3,
+            itemCount: 
 
           );
         },

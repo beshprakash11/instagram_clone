@@ -51,6 +51,17 @@ class _CommentScreenState extends State<CommentScreen> {
                         border: InputBorder.none),
                   ),
                 ),
+              ),
+              InkWell(
+                onTap: () async {
+                  await FireStoreMethods().postComment(widget.snap['postId'],
+                      _commentController.text, user.uid, user.username, user.photoUrl);
+                },
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                  child: const Text('Post', style: TextStyle(color: blueColor)),
+                ),
               )
             ],
           ),
@@ -65,20 +76,6 @@ class _CommentScreenState extends State<CommentScreen> {
       backgroundColor: mobileBackgroundColor,
       title: const Text('Comments'),
       centerTitle: false,
-    );
-  }
-
-
-  Widget _buildPostBtn(String userId, String username, String photoUrl) {
-    return InkWell(
-      onTap: () async {
-        await FireStoreMethods().postComment(widget.snap['postId'],
-            _commentController.text, userId, username, photoUrl);
-      },
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-        child: const Text('Post', style: TextStyle(color: blueColor)),
-      ),
     );
   }
 }

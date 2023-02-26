@@ -64,7 +64,7 @@ class _CommentCardState extends State<CommentCard> {
         DateFormat.yMMMd().format(
           widget.snap['datePublished'].toDate()
         ),
-        style: TextStyle(
+        style: const TextStyle(
             fontSize: 16, fontWeight: FontWeight.w400, color: Colors.white),
       ),
     );

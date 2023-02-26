@@ -44,7 +44,12 @@ class _SearchScreenState extends State<SearchScreen> {
             );
           }
           return ListView.builder(
-            itemBuilder: itemBuilder
+            itemCount: (snapshot.data! as dynamic).docs.length,
+            itemBuilder: (context, index){
+              return ListTile(
+                
+              );
+            }
           );
         }
       ),

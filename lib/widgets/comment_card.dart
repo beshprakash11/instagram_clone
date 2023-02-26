@@ -45,7 +45,7 @@ class _CommentCardState extends State<CommentCard> {
                     style: const TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.white)),
                 TextSpan(
-                    text: 'Some description to insert',
+                    text: ' ${widget.snap['text']}',
                     style: const TextStyle(color: Colors.white))
               ],
             )),

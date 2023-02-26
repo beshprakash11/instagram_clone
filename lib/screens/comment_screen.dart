@@ -18,7 +18,7 @@ class _CommentScreenState extends State<CommentScreen> {
     final User user = Provider.of<UserProvider>(context).getUser;
     return Scaffold(
       appBar: _buildAppBar(),
-      bottomNavigationBar: _buildBottomNavbar(context),
+      bottomNavigationBar: _buildBottomNavbar(context, user.photoUrl),
       body: CommentCard(),
     );
   }
@@ -31,7 +31,7 @@ class _CommentScreenState extends State<CommentScreen> {
     );
   }
 
-  Widget _buildBottomNavbar(BuildContext context) {
+  Widget _buildBottomNavbar(BuildContext context, String photoUrl) {
     return SafeArea(
       child: Container(
         height: kToolbarHeight,
@@ -40,7 +40,7 @@ class _CommentScreenState extends State<CommentScreen> {
         padding: const EdgeInsets.only(left: 16, right: 8),
         child: Row(
           children: [
-            _buildCircularAvatar(),
+            _buildCircularAvatar(photoUrl),
             _buildCommentUser(),
             _buildPostBtn()
           ],
@@ -72,7 +72,7 @@ class _CommentScreenState extends State<CommentScreen> {
   }
 
   Widget _buildCircularAvatar(String photoUrl) {
-    return const CircleAvatar(
+    return CircleAvatar(
       backgroundImage: NetworkImage(
         photoUrl
       ),

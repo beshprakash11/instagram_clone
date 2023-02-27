@@ -12,7 +12,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mobileBackgroundColor,
+      appBar: AppBar(
+        backgroundColor: mobileBackgroundColor,
+        title: const Text('username'),
+        centerTitle: false,
+      ),
       body: Center(child: Text("Profile screen")),
     );
   }

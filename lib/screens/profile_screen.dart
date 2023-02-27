@@ -51,4 +51,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
+
+  Column buildStatColumn(int num, String label){
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        
+      ],
+    );
+  }
 }

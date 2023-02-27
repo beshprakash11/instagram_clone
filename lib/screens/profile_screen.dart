@@ -63,11 +63,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],
                 ),
+                //User name
                 Container(
                   alignment: Alignment.centerLeft,
-                  padding: const EdgeInsets.only(top: 15),
+                  padding: const EdgeInsets.only(top: 2),
                   child: const Text(
                     'username',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+
+                ),
+                //Description
+                Container(
+                  alignment: Alignment.centerLeft,
+                  padding: const EdgeInsets.only(top: 2),
+                  child: const Text(
+                    'Some description',
                     style: TextStyle(
                       fontWeight: FontWeight.bold
                     ),

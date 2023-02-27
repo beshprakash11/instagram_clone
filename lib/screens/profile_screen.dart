@@ -94,9 +94,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Container(
                   alignment: Alignment.centerLeft,
                   padding: const EdgeInsets.only(top: 2),
-                  child: const Text(
-                    'username',
-                    style: TextStyle(
+                  child: Text(
+                    userData['username'],
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold
                     ),
                   ),

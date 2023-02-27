@@ -32,15 +32,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       radius: 40,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        buildStatColumn(20, "posts"),
-                        buildStatColumn(150, "followers"),
-                        buildStatColumn(20, "following"),
-                        
-                      ],
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          buildStatColumn(20, "posts"),
+                          buildStatColumn(150, "followers"),
+                          buildStatColumn(20, "following"),                        
+                        ],
+                      ),
                     ),
 
                   ],

@@ -175,8 +175,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           mainAxisSpacing: 1.5,
                           childAspectRatio: 1,
                         ),
-                        itemBuilder: (context, index){
-                          DocumentSnapshot snap = (snaphsot.data! as dynamic).docs[index];
+                        itemBuilder: (context, index) {
+                          DocumentSnapshot snap =
+                              (snaphsot.data! as dynamic).docs[index];
+                          return Container(
+                            child: Image(
+                              image: NetworkImage(
+                                (snap.data()! as dynamic)['postUrl'],
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                          );
                         },
                       );
                     }),

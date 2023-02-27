@@ -1,3 +1,5 @@
+import 'dart:js_util';
+
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/widgets/follow_button.dart';
@@ -87,6 +89,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ],
             ),
           ),
+          const Divider(),
         ],
       ),
     );

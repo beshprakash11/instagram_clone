@@ -1,5 +1,5 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/utils/utils.dart';
@@ -15,34 +15,38 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   var userData = {};
+  var postLen = 0;
   @override
   void initState() {
     super.initState();
     getData();
   }
 
-  getData() async{
+  getData() async {
     try {
       var userSnap = await FirebaseFirestore.instance
           .collection('users')
           .doc(widget.uid)
-          .get();    
-      userData = userSnap.data()!;  
-      setState(() {
-        
-      });
+          .get();
+      //get post length
+      var postSnap = await FirebaseFirestore.instance
+          .collection('posts')
+          .where('uid', isEqualTo: FirebaseAuth.instance.currentUser!.uid);
+      userData = userSnap.data()!;
+      setState(() {});
     } catch (err) {
       showSnackBar(context, err.toString());
-      
     }
-
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: mobileBackgroundColor,
-        title: Text(userData['username'],),
+        title: Text(
+          userData['username'],
+        ),
         centerTitle: false,
       ),
       body: ListView(
@@ -55,9 +59,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     CircleAvatar(
                       backgroundColor: Colors.grey,
-                      backgroundImage: NetworkImage(
-                        userData['photoUrl']
-                      ),
+                      backgroundImage: NetworkImage(userData['photoUrl']),
                       radius: 40,
                     ),
                     Expanded(
@@ -96,20 +98,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   padding: const EdgeInsets.only(top: 2),
                   child: Text(
                     userData['username'],
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold
-                    ),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
-
                 ),
                 //Description
                 Container(
                   alignment: Alignment.centerLeft,
                   padding: const EdgeInsets.only(top: 2),
-                  child: Text(
-                    userData['bio']
-                  ),
-
+                  child: Text(userData['bio']),
                 ),
               ],
             ),

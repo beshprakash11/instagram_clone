@@ -57,7 +57,10 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
         ),
         actions: [
           IconButton(
-              onPressed: () {}, icon: const Icon(Icons.messenger_outline)),
+            onPressed: () {},
+            icon: const Icon(Icons.home),
+            color: primaryColor,
+          ),
         ],
       ),
       body: PageView(

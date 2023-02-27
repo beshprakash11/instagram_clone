@@ -55,7 +55,14 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
       bottomNavigationBar: CupertinoTabBar(
         backgroundColor: mobileBackgroundColor,
         items:  <BottomNavigationBarItem>[
-          
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                color: (_page == 0) ? primaryColor : secondaryColor,
+              ),
+              label: '',
+              backgroundColor: primaryColor),
+
         ]
       )
     );

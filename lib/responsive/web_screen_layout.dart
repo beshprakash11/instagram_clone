@@ -41,6 +41,9 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
 
   void navigationTapped(int page) {
     pageController.jumpToPage(page);
+    setState(() {
+      _page = page;
+    });
   }
 
   @override

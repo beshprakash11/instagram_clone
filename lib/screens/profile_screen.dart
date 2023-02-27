@@ -1,4 +1,3 @@
-import 'dart:js_util';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -7,8 +6,8 @@ import 'package:instagram_clone/utils/utils.dart';
 import 'package:instagram_clone/widgets/follow_button.dart';
 
 class ProfileScreen extends StatefulWidget {
-  final String uuid;
-  const ProfileScreen({super.key, required this.uuid});
+  final String uid;
+  const ProfileScreen({super.key, required this.uid});
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -26,7 +25,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     try {
       var snap = await FirebaseFirestore.instance
           .collection('users')
-          .doc(widget.uuid)
+          .doc(widget.uid)
           .get();    
       userData = snap.data()!;  
     } catch (err) {

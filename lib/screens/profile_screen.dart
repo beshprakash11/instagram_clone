@@ -38,7 +38,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       children: [
                         buildStatColumn(20, "posts"),
                         buildStatColumn(150, "followers"),
-                        
+                        buildStatColumn(20, "following"),
                         
                       ],
                     ),

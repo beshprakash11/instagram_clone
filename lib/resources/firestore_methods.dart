@@ -98,7 +98,11 @@ class FireStoreMethods {
   }
 
    Future<void> followUser(String uid, String followId) async {
-    
+    try {
+      
+    } catch (err) {
+      print(err.toString());      
+    }
    }
  
 }

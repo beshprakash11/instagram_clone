@@ -81,7 +81,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
         
         Row(
-
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            FollowButton()
+          ],
         ),
       ],
     );

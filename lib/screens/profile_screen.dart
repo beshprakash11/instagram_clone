@@ -40,7 +40,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: mobileBackgroundColor,
-        title: const Text('username'),
+        title: Text(userData['username'],),
         centerTitle: false,
       ),
       body: ListView(

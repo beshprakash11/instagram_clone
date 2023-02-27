@@ -64,7 +64,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
             fontWeight: FontWeight.bold
           ),
         ),
-        
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.w400,
+            color: Colors.grey
+          ),
+        ),
+
       ],
     );
   }

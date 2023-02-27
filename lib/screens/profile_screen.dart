@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/utils/colors.dart';
+import 'package:instagram_clone/widgets/follow_button.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -83,7 +84,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            FollowButton()
+            FollowButton(
+              text: 'Edit Profile',
+              backgroundColor: mobileBackgroundColor,
+              textColor: primaryColor,
+              borderColor: Colors.grey,
+              function: (){},
+            ),
           ],
         ),
       ],

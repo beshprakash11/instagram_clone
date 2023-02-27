@@ -15,9 +15,11 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   var userData = {};
-  var postLen = 0;
-  var followers = 0;
-  var following = 0;
+  int postLen = 0;
+  int followers = 0;
+  int following = 0;
+
+  bool isFollowing = false;
   @override
   void initState() {
     super.initState();
@@ -33,7 +35,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
       //get post length
       var postSnap = await FirebaseFirestore.instance
           .collection('posts')
-          .where('uid', isEqualTo: FirebaseAuth.instance.currentUser!.uid).get();
+          .where('uid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+          .get();
       postLen = postSnap.docs.length;
       userData = userSnap.data()!;
       followers = userSnap.data()!['followers'].length;

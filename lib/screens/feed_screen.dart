@@ -14,7 +14,7 @@ class FeedScreen extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: width > webScreenSize ? null : AppBar(
-        backgroundColor: mobileBackgroundColor,
+        backgroundColor: width > webScreenSize ? webBackgroundColor : mobileBackgroundColor,
         centerTitle: false,
         title: SvgPicture.asset(
           'assets/ic_instagram.svg',

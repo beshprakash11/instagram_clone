@@ -50,14 +50,13 @@ class _PostCardState extends State<PostCard> {
     final model.User user = Provider.of<UserProvider>(context).getUser;
     final width = MediaQuery.of(context).size.width;
     return Container(
-      color: mobileBackgroundColor,
-      padding: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         border: Border.all(
           color: width > webScreenSize ? secondaryColor : mobileBackgroundColor,
         ),
-        color: mobileBackgroundColor
       ),
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      
       child: Column(
         children: [
           //HEADER SECTION

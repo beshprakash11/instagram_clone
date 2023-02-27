@@ -42,7 +42,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       followers = userSnap.data()!['followers'].length;
       following = userSnap.data()!['following'].length;
       isFollowing = userSnap
-          .data()!['folowers']
+          .data()!['followers']
           .contains(FirebaseAuth.instance.currentUser!.uid);
       print(isFollowing);
       setState(() {});

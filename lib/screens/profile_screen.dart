@@ -29,69 +29,64 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     const CircleAvatar(
                       backgroundColor: Colors.grey,
                       backgroundImage: NetworkImage(
-                        'https://images.unsplash.com/photo-1504710515126-acde274564d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',                        
+                        'https://images.unsplash.com/photo-1504710515126-acde274564d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
                       ),
                       radius: 40,
                     ),
                     Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        mainAxisSize: MainAxisSize.min,
+                      flex: 1,
+                      child: Column(
                         children: [
-                          buildStatColumn(20, "posts"),
-                          buildStatColumn(150, "followers"),
-                          buildStatColumn(20, "following"),                        
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              buildStatColumn(20, "posts"),
+                              buildStatColumn(150, "followers"),
+                              buildStatColumn(20, "following"),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              FollowButton(
+                                text: 'Edit Profile',
+                                backgroundColor: mobileBackgroundColor,
+                                textColor: primaryColor,
+                                borderColor: Colors.grey,
+                                function: () {},
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),
-
                   ],
                 ),
-
               ],
             ),
           ),
-
         ],
       ),
     );
   }
 
-  Column buildStatColumn(int num, String label){
+  Column buildStatColumn(int num, String label) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           num.toString(),
-          style: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold
-          ),
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         Container(
           margin: const EdgeInsets.only(top: 4),
           child: Text(
             label,
             style: const TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w400,
-              color: Colors.grey
-            ),
+                fontSize: 15, fontWeight: FontWeight.w400, color: Colors.grey),
           ),
-        ),
-        
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            FollowButton(
-              text: 'Edit Profile',
-              backgroundColor: mobileBackgroundColor,
-              textColor: primaryColor,
-              borderColor: Colors.grey,
-              function: (){},
-            ),
-          ],
         ),
       ],
     );

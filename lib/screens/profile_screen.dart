@@ -20,6 +20,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   int following = 0;
 
   bool isFollowing = false;
+  bool isLoading = false;
+
   @override
   void initState() {
     super.initState();
@@ -27,6 +29,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   getData() async {
+    setState(() {
+      isLoading = true;
+    });
     try {
       var userSnap = await FirebaseFirestore.instance
           .collection('users')
@@ -49,6 +54,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     } catch (err) {
       showSnackBar(context, err.toString());
     }
+    isLoading = false;
   }
 
   @override

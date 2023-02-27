@@ -5,13 +5,23 @@ import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/widgets/follow_button.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+  final String uuid;
+  const ProfileScreen({super.key, required this.uuid});
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  @override
+  void initState() {
+    super.initState();
+    getData();
+  }
+
+  getData() async{
+    
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

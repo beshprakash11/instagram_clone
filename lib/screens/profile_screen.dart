@@ -124,6 +124,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                           FirebaseAuth.instance
                                                               .currentUser!.uid,
                                                           userData['uid']);
+                                                  setState(() {
+                                                    isFollowing = false;
+                                                    followers--;
+                                                  });
                                                 },
                                               )
                                             : FollowButton(
@@ -139,6 +143,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                           userData['uid']);
                                                   setState(() {
                                                     isFollowing = true;
+                                                    followers++;
                                                   });
                                                 },
                                               ),

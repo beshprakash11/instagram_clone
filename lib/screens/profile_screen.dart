@@ -143,7 +143,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
           //Post data
           FutureBuilder(
-            builder: builder
+            future: FirebaseFirestore.instance.collection('posts').where('uid', isEqualTo: widget.uid).get(),
+            builder: (context, snaphsot){
+              if(snaphsot.connectionState == ConnectionState.waiting){
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+            }
           ),
         ],
       ),

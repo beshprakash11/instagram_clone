@@ -17,7 +17,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
         title: const Text('username'),
         centerTitle: false,
       ),
-      body: Center(child: Text("Profile screen")),
+      body: ListView(
+        children: [
+          
+        ],
+      ),
     );
   }
 }

@@ -71,6 +71,11 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
             icon: const Icon(Icons.add_a_photo),
             color: primaryColor,
           ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.favorite),
+            color: primaryColor,
+          ),
         ],
       ),
       body: PageView(

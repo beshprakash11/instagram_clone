@@ -69,6 +69,13 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
               ),
               label: '',
               backgroundColor: primaryColor),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.add_circle,
+                color: (_page == 2) ? primaryColor : secondaryColor,
+              ),
+              label: '',
+              backgroundColor: primaryColor),
         ],
       ),
     );

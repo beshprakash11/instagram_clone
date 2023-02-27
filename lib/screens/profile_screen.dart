@@ -89,8 +89,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              FollowButton(
+                              FirebaseAuth.instance.currentUser!.uid == widget.uid?  FollowButton(
                                 text: 'Edit Profile',
+                                backgroundColor: mobileBackgroundColor,
+                                textColor: primaryColor,
+                                borderColor: Colors.grey,
+                                function: () {},
+                              ) : isFollowing ? FollowButton(
+                                text: 'Unfollow',
                                 backgroundColor: mobileBackgroundColor,
                                 textColor: primaryColor,
                                 borderColor: Colors.grey,

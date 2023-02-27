@@ -93,6 +93,8 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
             backgroundColor: primaryColor,
           ),
         ],
+        onTap: navigationTapped,
+        currentIndex: _page,
       ),
     );
   }

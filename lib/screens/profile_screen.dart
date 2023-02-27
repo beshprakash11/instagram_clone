@@ -74,7 +74,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               buildStatColumn(postLen, "posts"),
-                              buildStatColumn(150, "followers"),
+                              buildStatColumn(followers, "followers"),
                               buildStatColumn(20, "following"),
                             ],
                           ),

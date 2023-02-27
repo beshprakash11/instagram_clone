@@ -150,6 +150,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   child: CircularProgressIndicator(),
                 );
               }
+              return GridView.builder(
+                gridDelegate: gridDelegate, 
+                itemBuilder: itemBuilder
+              );
             }
           ),
         ],

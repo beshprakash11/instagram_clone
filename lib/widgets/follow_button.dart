@@ -21,9 +21,12 @@ class FollowButton extends StatelessWidget {
           decoration: BoxDecoration(
             color: backgroundColor,
             border: Border.all(
-
-            )
+              color: borderColor
+            ),
+            borderRadius: BorderRadius.circular(5),
           ),
+          alignment: Alignment.center,
+          child: Text(''),
         )
       ),
     );

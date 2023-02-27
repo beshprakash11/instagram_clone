@@ -15,6 +15,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  var userData = {};
   @override
   void initState() {
     super.initState();
@@ -23,10 +24,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   getData() async{
     try {
-      DocumentSnapshot snap = await FirebaseFirestore.instance
+      var snap = await FirebaseFirestore.instance
           .collection('users')
           .doc(widget.uuid)
-          .get();      
+          .get();    
+      userData = snap.data()!;  
     } catch (err) {
       showSnackBar(context, err.toString());
       

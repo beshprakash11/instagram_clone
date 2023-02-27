@@ -127,7 +127,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                 backgroundColor: Colors.blue,
                                                 textColor: Colors.white,
                                                 borderColor: Colors.blue,
-                                                function: () async{},
+                                                function: () async{
+                                                  await FireStoreMethods().followUser(FirebaseAuth.instance.currentUser!.uid , userData['uid']);
+                                                },
                                               ),
                                   ],
                                 ),

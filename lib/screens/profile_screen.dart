@@ -1,5 +1,6 @@
 import 'dart:js_util';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/utils/utils.dart';
@@ -22,7 +23,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   getData() async{
     try {
-      
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(widget.uuid)
+          .get();      
     } catch (err) {
       showSnackBar(context, err.toString());
       

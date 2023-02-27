@@ -28,6 +28,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
           .doc(widget.uid)
           .get();    
       userData = snap.data()!;  
+      setState(() {
+        
+      });
     } catch (err) {
       showSnackBar(context, err.toString());
       

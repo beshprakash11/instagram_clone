@@ -71,7 +71,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              buildStatColumn(20, "posts"),
+                              buildStatColumn(postLen, "posts"),
                               buildStatColumn(150, "followers"),
                               buildStatColumn(20, "following"),
                             ],

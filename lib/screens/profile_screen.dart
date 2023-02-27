@@ -106,8 +106,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Container(
                   alignment: Alignment.centerLeft,
                   padding: const EdgeInsets.only(top: 2),
-                  child: const Text(
-                    'Some description'
+                  child: Text(
+                    userData['bio']
                   ),
 
                 ),

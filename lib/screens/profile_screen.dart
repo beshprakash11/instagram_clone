@@ -97,8 +97,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 function: () {},
                               ) : isFollowing ? FollowButton(
                                 text: 'Unfollow',
-                                backgroundColor: mobileBackgroundColor,
-                                textColor: primaryColor,
+                                backgroundColor: Colors.white,
+                                textColor: Colors.black,
                                 borderColor: Colors.grey,
                                 function: () {},
                               ),

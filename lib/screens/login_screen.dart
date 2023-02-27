@@ -31,20 +31,19 @@ class _LoginScreenState extends State<LoginScreen> {
     _passwordController.dispose();
   }
 
-  void loginUser() async{
+  void loginUser() async {
     setState(() {
       _isLoading = true;
     });
-    String res = await AuthMethods().loginUsers(email: _emailController.text, password: _passwordController.text);
-    if (res == 'success'){
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
+    String res = await AuthMethods().loginUsers(
+        email: _emailController.text, password: _passwordController.text);
+    if (res == 'success') {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
           builder: (context) => const ResponsvieLayout(
                 mobileScreenLayout: MobileScreenLayout(),
-                 webScreenLayout: WebScreenLayout(),
-              )
-        ));
-    }else{
+                webScreenLayout: WebScreenLayout(),
+              )));
+    } else {
       showSnackBar(context, res);
     }
     setState(() {
@@ -52,10 +51,9 @@ class _LoginScreenState extends State<LoginScreen> {
     });
   }
 
-  void navigateToSignUp(){
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => const SignupScreen())
-    );
+  void navigateToSignUp() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const SignupScreen()));
   }
 
   @override
@@ -63,7 +61,10 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SafeArea(
           child: Container(
-        padding: MediaQuery.of(context).size.width > webScreenSize ?  const EdgeInsets.symmetric(horizontal: 32) : const EdgeInsets.symmetric(horizontal: 32),
+        padding: MediaQuery.of(context).size.width > webScreenSize
+            ? EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width / 3)
+            : const EdgeInsets.symmetric(horizontal: 32),
         width: double.infinity,
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
           Flexible(
@@ -145,9 +146,13 @@ class _LoginScreenState extends State<LoginScreen> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(4))),
             color: blueColor),
-        child: _isLoading ? const  Center(
-          child: CircularProgressIndicator(color: primaryColor,),
-        ): const Text('Log in'),
+        child: _isLoading
+            ? const Center(
+                child: CircularProgressIndicator(
+                  color: primaryColor,
+                ),
+              )
+            : const Text('Log in'),
       ),
     );
   }

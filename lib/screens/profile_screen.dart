@@ -105,7 +105,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     FirebaseAuth.instance.currentUser!.uid ==
                                             widget.uid
                                         ? FollowButton(
-                                            text: 'Edit Profile',
+                                            text: 'Sign OUt',
                                             backgroundColor:
                                                 mobileBackgroundColor,
                                             textColor: primaryColor,

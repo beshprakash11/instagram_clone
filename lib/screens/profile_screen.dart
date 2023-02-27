@@ -49,7 +49,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       isFollowing = userSnap
           .data()!['followers']
           .contains(FirebaseAuth.instance.currentUser!.uid);
-      print(isFollowing);
       setState(() {});
     } catch (err) {
       showSnackBar(context, err.toString());
@@ -141,6 +140,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ),
           const Divider(),
+
+          //Post data
+          FutureBuilder(
+            builder: builder
+          ),
         ],
       ),
     );

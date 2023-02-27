@@ -36,7 +36,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-
+                        buildStatColumn(20, "posts"),
+                        
                       ],
                     ),
 

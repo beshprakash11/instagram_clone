@@ -60,13 +60,15 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
             onPressed: () {},
             icon: Icon(
               Icons.home,
-              color: _page == 1 ? primaryColor : secondaryColor,
+              color: _page == 0 ? primaryColor : secondaryColor,
             ),
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.search),
-            color: primaryColor,
+            icon: Icon(
+              Icons.search,
+              color: _page == 1 ? primaryColor : secondaryColor,
+            ),
           ),
           IconButton(
             onPressed: () {},

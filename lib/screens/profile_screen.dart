@@ -80,10 +80,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   alignment: Alignment.centerLeft,
                   padding: const EdgeInsets.only(top: 2),
                   child: const Text(
-                    'Some description',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold
-                    ),
+                    'Some description'
                   ),
 
                 ),

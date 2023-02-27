@@ -57,6 +57,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        Text(
+          num.toString(),
+          style: const TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold
+          ),
+        ),
         
       ],
     );

@@ -20,6 +20,22 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    pageController.dispose();
+  }
+
+  void onPageChanged(int page) {
+    setState(() {
+      _page = page;
+    });
+  }
+
+  void navigationTapped(int page) {
+    pageController.jumpToPage(page);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(

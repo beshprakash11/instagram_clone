@@ -137,6 +137,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                           FirebaseAuth.instance
                                                               .currentUser!.uid,
                                                           userData['uid']);
+                                                  setState(() {
+                                                    isFollowing = true;
+                                                  });
                                                 },
                                               ),
                                   ],

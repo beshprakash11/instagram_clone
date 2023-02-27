@@ -13,15 +13,3 @@
 # Packages uses
 - Pubspec Assist for pubspec updated
 - Error lens for error traces
-
-# Running for different platform
-- web with selection:- flutter run --web-renderer html 
-- web:-  flutter build web --release --web-renderer html
-
-
-
-# Firebase settings up: 6- setting up firebase
-- iOS settings up: 0-7:12 minutes
-
-# Photo permision for ios:
-- Firebase signup Auth:- 27:00 to 30

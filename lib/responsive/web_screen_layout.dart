@@ -79,8 +79,10 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.favorite),
-            color: primaryColor,
+            icon: Icon(
+              Icons.favorite,
+              color: _page == 1 ? primaryColor : secondaryColor,
+            ),
           ),
           IconButton(
             onPressed: () {},

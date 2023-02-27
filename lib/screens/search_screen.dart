@@ -20,6 +20,7 @@ class _SearchScreenState extends State<SearchScreen> {
     super.dispose();
     searchController.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,10 +28,8 @@ class _SearchScreenState extends State<SearchScreen> {
         backgroundColor: mobileBackgroundColor,
         title: TextFormField(
           controller: searchController,
-          decoration: const InputDecoration(
-            labelText: 'Search for a user'
-          ),
-          onFieldSubmitted: (String _){
+          decoration: const InputDecoration(labelText: 'Search for a user'),
+          onFieldSubmitted: (String _) {
             setState(() {
               isShowUser = true;
             });
@@ -43,12 +42,12 @@ class _SearchScreenState extends State<SearchScreen> {
 
   FutureBuilder<QuerySnapshot<Map<String, dynamic>>> _buildPostData() {
     return FutureBuilder(
-      future: FirebaseFirestore.instance
-      .collection('posts')
-      .get(),
-      builder: (context, snapshot){
-        if(!snapshot.hasData){
-          return const Center(child: CircularProgressIndicator(),);
+      future: FirebaseFirestore.instance.collection('posts').get(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
         }
         return StaggeredGridView.countBuilder(
           crossAxisCount: 3,
@@ -56,11 +55,9 @@ class _SearchScreenState extends State<SearchScreen> {
           itemBuilder: (context, index) => Image.network(
             (snapshot.data! as dynamic).docs['index']['postUrl'],
             fit: BoxFit.cover,
-          ),   
-          staggeredTileBuilder: (index) => StaggeredTile.count(
-            (index % 7 == 0) ? 2:1, 
-            (index % 7 == 0) ? 2:1
           ),
+          staggeredTileBuilder: (index) => StaggeredTile.count(
+              (index % 7 == 0) ? 2 : 1, (index % 7 == 0) ? 2 : 1),
           mainAxisSpacing: 8,
           crossAxisSpacing: 8,
         );
@@ -70,37 +67,37 @@ class _SearchScreenState extends State<SearchScreen> {
 
   FutureBuilder<QuerySnapshot<Map<String, dynamic>>> _buildUserNameImage() {
     return FutureBuilder(
-      future: FirebaseFirestore.instance
-      .collection('users')
-      .where('username', isGreaterThanOrEqualTo: searchController.text)
-      .get(),
-      builder: (context, snapshot){
-        if(!snapshot.hasData){
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        }
-        return ListView.builder(
-          itemCount: (snapshot.data! as dynamic).docs.length,
-          itemBuilder: (context, index){
-            return InkWell(
-              onTap: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: () => ProfileScreen(uid: uid)))
-              ),
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                    (snapshot.data! as dynamic).docs[index]['photoUrl']
-                  ),
-                ),
-            
-                title: Text((snapshot.data! as dynamic).docs[index]['username']),
-            
-              ),
+        future: FirebaseFirestore.instance
+            .collection('users')
+            .where('username', isGreaterThanOrEqualTo: searchController.text)
+            .get(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const Center(
+              child: CircularProgressIndicator(),
             );
           }
-        );
-      }
-    );
+          return ListView.builder(
+              itemCount: (snapshot.data! as dynamic).docs.length,
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => ProfileScreen(
+                        uid: (snapshot.data! as dynamic).docs[index]['uid'],
+                      ),
+                    ),
+                  ),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          (snapshot.data! as dynamic).docs[index]['photoUrl']),
+                    ),
+                    title: Text(
+                        (snapshot.data! as dynamic).docs[index]['username']),
+                  ),
+                );
+              });
+        });
   }
 }

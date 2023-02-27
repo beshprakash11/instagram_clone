@@ -16,6 +16,7 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   var userData = {};
   var postLen = 0;
+  var followers = 0;
   @override
   void initState() {
     super.initState();
@@ -34,6 +35,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           .where('uid', isEqualTo: FirebaseAuth.instance.currentUser!.uid).get();
       postLen = postSnap.docs.length;
       userData = userSnap.data()!;
+      followers = userSnap.data()!['followers'].length;
       setState(() {});
     } catch (err) {
       showSnackBar(context, err.toString());

@@ -17,6 +17,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   var userData = {};
   var postLen = 0;
   var followers = 0;
+  var following = 0;
   @override
   void initState() {
     super.initState();
@@ -36,6 +37,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       postLen = postSnap.docs.length;
       userData = userSnap.data()!;
       followers = userSnap.data()!['followers'].length;
+      following = userSnap.data()!['following'].length;
       setState(() {});
     } catch (err) {
       showSnackBar(context, err.toString());

@@ -43,7 +43,11 @@ class FeedScreen extends StatelessWidget {
           return ListView.builder(
             itemCount: snapshot.data!.docs.length,
             itemBuilder: (context, index) => Container(
+              margin: EdgeInsets.symmetric(
+                horizontal: width > webScreenSize ? width * 0.3 : 0
+              ),
               child: PostCard(
+                
                 snap: snapshot.data!.docs[index].data(),
               ),
             )

@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/models/users.dart' as model;
+import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/utils/global_variables.dart';
 import 'package:provider/provider.dart';
 
@@ -50,6 +52,12 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
         controller: pageController,
         onPageChanged: onPageChanged,
       ),
+      bottomNavigationBar: CupertinoTabBar(
+        backgroundColor: mobileBackgroundColor,
+        items:  <BottomNavigationBarItem>[
+          
+        ]
+      )
     );
   }
 }

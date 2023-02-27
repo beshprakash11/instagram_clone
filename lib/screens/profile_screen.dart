@@ -59,7 +59,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return isLoading ? const Center(child: CircularProgressIndicator(),) : Scaffold(
       appBar: AppBar(
         backgroundColor: mobileBackgroundColor,
         title: Text(

@@ -166,16 +166,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         );
                       }
                       return GridView.builder(
-                          shrinkWrap: true,
-                          itemCount: (snaphsot.data! as dynamic).docs.length,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 3,
-                            crossAxisSpacing: 5,
-                            mainAxisSpacing: 1.5,
-                            childAspectRatio: 1,
-                          ),
-                          itemBuilder: itemBuilder);
+                        shrinkWrap: true,
+                        itemCount: (snaphsot.data! as dynamic).docs.length,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          crossAxisSpacing: 5,
+                          mainAxisSpacing: 1.5,
+                          childAspectRatio: 1,
+                        ),
+                        itemBuilder: (context, index){
+                          DocumentSnapshot snap = (snaphsot.data! as dynamic).docs[index];
+                        },
+                      );
                     }),
               ],
             ),

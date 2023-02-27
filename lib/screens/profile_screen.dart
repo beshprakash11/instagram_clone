@@ -23,7 +23,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   getData() async{
     try {
-      await FirebaseFirestore.instance
+      DocumentSnapshot snap = await FirebaseFirestore.instance
           .collection('users')
           .doc(widget.uuid)
           .get();      

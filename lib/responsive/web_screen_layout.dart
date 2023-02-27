@@ -46,6 +46,9 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
   Widget build(BuildContext context) {
     model.User user = Provider.of<UserProvider>(context).getUser;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: webBackgroundColor,
+      ),
       body: PageView(
         children: homeScreenItems,
         physics: const NeverScrollableScrollPhysics(),

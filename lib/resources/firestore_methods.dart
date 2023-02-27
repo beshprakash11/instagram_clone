@@ -96,4 +96,9 @@ class FireStoreMethods {
     }
     return res;
   }
+
+   Future<void> followUser(String uid, String followId) async {
+    
+   }
+ 
 }
